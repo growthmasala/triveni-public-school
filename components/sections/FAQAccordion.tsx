@@ -22,7 +22,7 @@ export default function FAQAccordion({ items }: Props) {
             className="w-full flex items-center justify-between px-6 py-5 font-urbanist font-bold text-base text-[#1A1A2A] text-left hover:text-accent transition-colors duration-300 gap-4"
           >
             {item.question}
-            <i className={`ri-arrow-down-s-line text-accent text-lg flex-shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`} />
+            <i className={`ri-arrow-down-s-line text-accent text-lg shrink-0 transition-transform duration-300 ${open === i ? 'rotate-180' : ''}`} />
           </button>
           <AnimatePresence initial={false}>
             {open === i && (

@@ -9,8 +9,9 @@ const links = [
   { href: '/',           label: 'Home' },
   { href: '/about',      label: 'About' },
   { href: '/academics',  label: 'Academics' },
+  { href: '/pedagogy',   label: 'Pedagogy' },
   { href: '/admissions', label: 'Admissions' },
-  { href: '/life',       label: 'Life at Triveni' },
+  { href: '/life',       label: 'School Life' },
   { href: '/contact',    label: 'Contact' },
 ]
 
@@ -79,7 +80,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links — visible at lg (1024px) and above */}
-          <ul className="hidden lg:flex items-center gap-7 xl:gap-9">
+          <ul className="hidden lg:flex items-center gap-4 xl:gap-7">
             {links.map(({ href, label }) => {
               const active = pathname === href
               return (

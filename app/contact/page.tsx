@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 const areas = ['Bagalagunte', 'Mallasandra', 'T. Dasarahalli', 'Nagasandra', 'Hessarghatta Road', 'Peenya', 'Yeshwanthpur', 'Your Area?']
 
 const testimonials = [
-  { initial: 'S', name: 'Suresh K.', role: 'Parent · JustDial Review', rating: 5, quote: 'The best school in the industry for quality education at affordable cost. Dedicated and committed teachers, supportive management.' },
-  { initial: 'M', name: 'Manjula R.', role: 'Parent · JustDial Review', rating: 5, quote: 'Great level of confidence in my son — improvement in personality, discipline and academic skills. I am very happy with this school.' },
-  { initial: 'V', name: 'Vijay N.', role: 'Parent · JustDial Review', rating: 5, quote: 'Management is too supportive with teaching team as well as with parents. Thankful to the teachers and staff for all the progress we\'ve seen.' },
+  { initial: 'S', name: 'Suresh K.', role: 'Parent · Triveni Public School', rating: 5, quote: 'The best school in the industry for quality education at affordable cost. Dedicated and committed teachers, supportive management.' },
+  { initial: 'M', name: 'Manjula R.', role: 'Parent · Triveni Public School', rating: 5, quote: 'Great level of confidence in my son — improvement in personality, discipline and academic skills. I am very happy with this school.' },
+  { initial: 'V', name: 'Vijay N.', role: 'Parent · Triveni Public School', rating: 5, quote: 'Management is too supportive with teaching team as well as with parents. Thankful to the teachers and staff for all the progress we\'ve seen.' },
 ]
 
 const schemaOrg = {
@@ -27,7 +27,6 @@ const schemaOrg = {
   email: 'info@trivenipublicschool.in',
   address: { '@type': 'PostalAddress', streetAddress: 'No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Mallasandra, T. Dasarahalli', addressLocality: 'Bengaluru', addressRegion: 'Karnataka', postalCode: '560073', addressCountry: 'IN' },
   openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '17:00' },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.2', reviewCount: '138' },
 }
 
 export default function ContactPage() {
@@ -51,7 +50,7 @@ export default function ContactPage() {
             ].map((c, i) => (
               <FadeIn key={c.title} delay={i * 0.1}>
                 <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="bg-white rounded-md p-6 shadow-sm border border-border flex gap-4 items-start hover:shadow-md hover:border-accent transition-all duration-300 block no-underline">
-                  <div className={`w-[52px] h-[52px] rounded-md flex items-center justify-center text-xl flex-shrink-0 ${c.iconBg ?? 'bg-accent/10'} ${c.iconColor ?? 'text-accent'}`}>
+                  <div className={`w-[52px] h-[52px] rounded-md flex items-center justify-center text-xl shrink-0 ${c.iconBg ?? 'bg-accent/10'} ${c.iconColor ?? 'text-accent'}`}>
                     <i className={c.icon} />
                   </div>
                   <div>
@@ -67,7 +66,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + Map */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -97,7 +96,7 @@ export default function ContactPage() {
                   { icon: 'ri-government-line', label: 'CISCE Code', value: 'KA-214' },
                 ].map(({ icon, label, value, href }) => (
                   <div key={label} className="flex gap-3 items-start">
-                    <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center text-accent text-[18px] flex-shrink-0">
+                    <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center text-accent text-[18px] shrink-0">
                       <i className={icon} />
                     </div>
                     <div>
@@ -120,14 +119,37 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Areas served */}
-      <section className="py-[88px] bg-surface">
+      {/* Transport & Areas served */}
+      <section className="py-22 bg-surface">
         <div className="container-main">
           <div className="text-center mb-10">
-            <SectionLabel>Serving North Bengaluru</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">We Serve Families Across These Areas</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Triveni Public School is conveniently located for families across the North-West Bengaluru corridor. Bus routes cover most of these areas.</p>
+            <SectionLabel>Transport &amp; Areas Served</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Safe, Reliable Transport Across North Bengaluru</h2>
+            <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">Triveni Public School operates school bus routes covering the major localities in North-West Bengaluru. Contact us to confirm availability for your area.</p>
           </div>
+
+          {/* Transport highlights */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+            {[
+              { icon: 'ri-bus-line', title: 'School Bus Service', desc: 'Dedicated school buses covering key routes across North Bengaluru — safe, punctual and supervised.' },
+              { icon: 'ri-shield-check-line', title: 'Safe & Supervised', desc: 'Every bus route is supervised. Student safety during transit is a non-negotiable priority at Triveni.' },
+              { icon: 'ri-phone-line', title: 'Confirm Your Route', desc: 'Call or WhatsApp us with your locality and we will confirm whether your area is covered and share timings.' },
+            ].map((item, i) => (
+              <FadeIn key={item.title} delay={i * 0.1}>
+                <div className="bg-white rounded-md p-7 shadow-sm border border-border flex gap-4 items-start">
+                  <div className="w-12 h-12 bg-accent/10 rounded-md flex items-center justify-center text-accent text-xl shrink-0">
+                    <i className={item.icon} />
+                  </div>
+                  <div>
+                    <h4 className="font-urbanist font-bold text-base text-[#1A1A2A] mb-1">{item.title}</h4>
+                    <p className="text-muted text-sm leading-[1.6]">{item.desc}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Areas grid */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {areas.map((area, i) => (
               <FadeIn key={area} delay={(i % 4) * 0.1}>
@@ -143,11 +165,11 @@ export default function ContactPage() {
       </section>
 
       {/* Reviews */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <div className="text-center mb-10">
             <SectionLabel>What Parents Say</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Rated 4.2★ by 138+ Parents</h2>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Trusted by Families Across North Bengaluru</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
@@ -167,8 +189,8 @@ export default function ContactPage() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href="https://www.justdial.com/Bangalore/Triveni-Public-School-Triveni-Service-Station-Hessargatta-Main-Road/080PXX80-XX80-110328004903-Q6U2_BZDET" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-primary border-2 border-primary rounded-pill px-7 py-3.5 hover:bg-primary hover:text-white transition-all duration-300">
-              <i className="ri-external-link-line" /> Read All 138 Reviews on JustDial
+            <a href="/admissions#enquiry-form" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-primary border-2 border-primary rounded-pill px-7 py-3.5 hover:bg-primary hover:text-white transition-all duration-300">
+              <i className="ri-user-add-line" /> Enquire for Admission
             </a>
           </div>
         </div>

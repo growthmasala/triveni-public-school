@@ -45,7 +45,7 @@ export default function LifePage() {
       />
 
       {/* Intro */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <SplitSection
             imageSrc="/images/event-kindergarten-graduation-blue-gowns.jpg"
@@ -72,7 +72,7 @@ export default function LifePage() {
       </section>
 
       {/* Events */}
-      <section className="py-[88px] bg-surface">
+      <section className="py-22 bg-surface">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>School Events</SectionLabel>
@@ -102,7 +102,7 @@ export default function LifePage() {
             ].map((e, i) => (
               <FadeIn key={e.title} delay={i * 0.1}>
                 <div className="bg-white rounded-md overflow-hidden shadow-sm border border-border h-full">
-                  <div className="relative h-[200px] overflow-hidden">
+                  <div className="relative h-50 overflow-hidden">
                     <Image src={e.img} alt={e.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="p-6">
@@ -118,7 +118,7 @@ export default function LifePage() {
       </section>
 
       {/* NCC & Scouts */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Discipline &amp; Service</SectionLabel>
@@ -151,8 +151,48 @@ export default function LifePage() {
         </div>
       </section>
 
+      {/* Sustainability — Waste-Paper Recycling */}
+      <section className="py-22 bg-surface">
+        <div className="container-main">
+          <SplitSection
+            imageSrc="/images/campus-exterior-evening-angle2.jpg"
+            imageAlt="Triveni Public School campus — sustainability in action"
+            imageBadge="Student-Led Initiative · Grades IX & X"
+            imageBadgeIcon="ri-recycle-line"
+            reverse
+          >
+            <FadeIn direction="left">
+              <SectionLabel>Sustainability in Action</SectionLabel>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Our Students Recycle — Not as a Project, but as a Practice</h2>
+              <blockquote className="border-l-4 border-accent pl-5 italic text-body text-[16px] leading-[1.75] mb-5">
+                &ldquo;Recycling is very important, as waste has a huge negative impact on the natural environment.&rdquo;
+              </blockquote>
+              <p className="text-muted leading-[1.8] mb-4">
+                Students of Grades IX and X at Triveni lead our <strong className="text-body">Waste-Paper Recycling Project</strong> — a live, ongoing sustainability initiative where senior students take real ownership of an environmental challenge within the school campus.
+              </p>
+              <p className="text-muted leading-[1.8] mb-6">
+                This is not a classroom exercise. Students collect, process and recycle waste paper generated over time — understanding firsthand how waste affects ecosystems and why responsible action matters for every generation.
+              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  'Led entirely by Grade IX and X students',
+                  'Addresses real environmental impact of paper waste',
+                  'Builds ownership, accountability and environmental empathy',
+                  'Part of our broader commitment to education for life',
+                ].map(item => (
+                  <div key={item} className="flex items-start gap-3 text-[15px] text-body">
+                    <i className="ri-check-double-line text-accent text-lg mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </SplitSection>
+        </div>
+      </section>
+
       {/* Gallery */}
-      <section className="py-[88px] bg-surface">
+      <section className="py-22">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Photo Gallery</SectionLabel>
@@ -162,7 +202,7 @@ export default function LifePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {galleryImages.map(({ src, alt, wide }) => (
               <FadeIn key={src} className={wide ? 'lg:col-span-2' : ''}>
-                <div className={`rounded-md overflow-hidden group cursor-pointer relative ${wide ? 'aspect-[2/1]' : 'aspect-[4/3]'}`}>
+                <div className={`rounded-md overflow-hidden group cursor-pointer relative ${wide ? 'aspect-2/1' : 'aspect-4/3'}`}>
                   <Image src={src} alt={alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 66vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-3xl">
                     <i className="ri-zoom-in-line" />
@@ -175,7 +215,7 @@ export default function LifePage() {
       </section>
 
       {/* Campus */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Our Campus</SectionLabel>
@@ -185,7 +225,7 @@ export default function LifePage() {
             {campus.map((c, i) => (
               <FadeIn key={c.title} delay={(i % 3) * 0.1}>
                 <div className="bg-white rounded-md p-9 shadow-sm border border-border hover:-translate-y-1.5 hover:shadow-lg hover:border-accent transition-all duration-300 group h-full">
-                  <div className="w-[60px] h-[60px] bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <div className="w-15 h-15 bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                     <i className={c.icon} />
                   </div>
                   <h4 className="font-urbanist font-bold text-[18px] text-[#1A1A2A] mb-2.5">{c.title}</h4>

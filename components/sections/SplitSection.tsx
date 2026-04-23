@@ -24,7 +24,7 @@ export default function SplitSection({
 }: Props) {
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[72px] items-center ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-18 items-center ${
         reverse ? 'lg:[direction:rtl]' : ''
       }`}
     >

@@ -37,7 +37,7 @@ export default function Testimonials({ items }: Props) {
               </div>
               <p className="text-body text-base leading-[1.75] italic mb-6">"{t.quote}"</p>
               <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center font-urbanist font-extrabold text-xl text-primary flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center font-urbanist font-extrabold text-xl text-primary shrink-0">
                   {t.initial}
                 </div>
                 <div>
