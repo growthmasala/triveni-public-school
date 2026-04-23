@@ -28,7 +28,7 @@ export default function Hero() {
       {/* Background — next/image with priority for LCP */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-campus.png"
+          src="/images/hero-campus.jpg"
           alt="Triveni Public School campus"
           fill
           priority

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "remixicon/fonts/remixicon.css";
 
 /* ============================================================
    TAILWIND v4 THEME — all custom tokens go here, NOT in tailwind.config.ts
