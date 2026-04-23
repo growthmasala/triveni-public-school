@@ -81,4 +81,16 @@
     50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.70); }
   }
   .whatsapp-pulse { animation: pulse-green 2.5s infinite; }
+
+  /* Testimonials marquee */
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 38s linear infinite;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
 }

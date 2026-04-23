@@ -5,8 +5,9 @@ const quickLinks = [
   { href: '/',           label: 'Home' },
   { href: '/about',      label: 'About Us' },
   { href: '/academics',  label: 'Academics' },
+  { href: '/pedagogy',   label: 'Our Pedagogy' },
   { href: '/admissions', label: 'Admissions' },
-  { href: '/life',       label: 'Life at Triveni' },
+  { href: '/life',       label: 'School Life' },
   { href: '/contact',    label: 'Contact' },
 ]
 
@@ -15,7 +16,7 @@ const academicLinks = [
   { href: '/academics#primary',    label: 'Primary (I–V)' },
   { href: '/academics#middle',     label: 'Middle School (VI–VIII)' },
   { href: '/academics#senior',     label: 'Senior School (IX–X)' },
-  { href: '/academics#pedagogy',   label: 'Our Pedagogy' },
+  { href: '/pedagogy',             label: 'Our Pedagogy' },
   { href: '/academics#clubs',      label: 'Clubs & Activities' },
 ]
 
@@ -101,7 +102,7 @@ export default function Footer() {
                 { icon: 'ri-time-line',      content: 'Mon – Sat: 8:00 AM – 5:00 PM' },
               ].map(({ icon, content, href }) => (
                 <div key={icon} className="flex gap-2.5 items-start">
-                  <i className={`${icon} text-accent mt-0.5 flex-shrink-0`} />
+                  <i className={`${icon} text-accent mt-0.5 shrink-0`} />
                   {href ? (
                     <a href={href} className="text-sm text-white/60 hover:text-accent transition-colors leading-relaxed">{content}</a>
                   ) : (
@@ -116,7 +117,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.08] py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-sm text-white/45 text-center md:text-left">
-            © 2025 Triveni Public School, Bengaluru. All rights reserved. | CISCE School Code: KA-214
+            © 2026 Triveni Public School, Bengaluru. All rights reserved. | CISCE School Code: KA-214
           </p>
           <p className="text-sm text-white/45">
             Built by <a href="https://growthmasala.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Growth Masala</a>

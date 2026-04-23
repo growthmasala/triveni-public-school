@@ -1,18 +1,23 @@
+import Image from 'next/image'
 import Button from '@/components/ui/Button'
 import StatCounter from '@/components/sections/StatCounter'
 import FadeIn from '@/components/ui/FadeIn'
 
-const stats = [
-  { target: 18,  suffix: '+', label: 'Years of Excellence' },
-  { target: 500, suffix: '+', label: 'Students Enrolled' },
-  { target: 40,  suffix: '+', label: 'Dedicated Faculty' },
-  { target: 100, suffix: '%', label: 'Holistic Development' },
+type StatItem =
+  | { kind: 'counter'; target: number; suffix: string; label: string }
+  | { kind: 'text'; value: string; sub: string; label: string }
+
+const stats: StatItem[] = [
+  { kind: 'counter', target: 18, suffix: '+', label: 'Years of Excellence' },
+  { kind: 'text', value: 'ICSE', sub: 'CISCE, New Delhi', label: 'Board Affiliated' },
+  { kind: 'text', value: 'Nursery – X', sub: 'Pre-Primary to Grade X', label: 'All Grades Covered' },
+  { kind: 'text', value: 'NIE Partner', sub: 'Times of India', label: 'Newspaper in Education' },
 ]
 
 const trust = [
   { icon: 'ri-checkbox-circle-fill', text: 'Founded 2007' },
-  { icon: 'ri-checkbox-circle-fill', text: 'ICSE Board' },
-  { icon: 'ri-checkbox-circle-fill', text: '4.2★ JustDial (138 reviews)' },
+  { icon: 'ri-checkbox-circle-fill', text: 'ICSE Board · KA-214' },
+  { icon: 'ri-checkbox-circle-fill', text: 'NIE Partner: Times of India' },
   { icon: 'ri-checkbox-circle-fill', text: 'Pre-Primary to Grade X' },
 ]
 
@@ -20,11 +25,18 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
 
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-right"
-        style={{ backgroundImage: "url('/images/hero-campus.png')" }}
-      />
+      {/* Background — next/image with priority for LCP */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-campus.png"
+          alt="Triveni Public School campus"
+          fill
+          priority
+          quality={85}
+          sizes="100vw"
+          className="object-cover object-right"
+        />
+      </div>
 
       {/* Dark-left gradient overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-[rgba(10,14,40,0.95)] via-[rgba(15,18,48,0.88)] via-45% to-[rgba(15,18,48,0.10)]" />
@@ -55,8 +67,8 @@ export default function Hero() {
                 <Button href="/admissions" variant="accent" size="lg" className="justify-center">
                   <i className="ri-user-add-line" /> Apply for Admission
                 </Button>
-                <Button href="/about" variant="outline-white" size="lg" className="justify-center">
-                  <i className="ri-play-circle-line" /> Discover Our School
+                <Button href="/life" variant="outline-white" size="lg" className="justify-center">
+                  <i className="ri-image-line" /> See School Life
                 </Button>
               </div>
 
@@ -84,15 +96,20 @@ export default function Hero() {
                 key={s.label}
                 className={[
                   'py-6 px-4',
-                  /* right border between columns */
                   i % 2 === 0 ? 'border-r border-white/12' : '',
-                  /* bottom border between the two mobile rows */
                   i < 2 ? 'border-b lg:border-b-0 border-white/12' : '',
-                  /* on lg replace with right-border, remove last col border */
                   'lg:border-r lg:last:border-r-0 lg:border-white/12',
                 ].join(' ')}
               >
-                <StatCounter {...s} />
+                {s.kind === 'counter' ? (
+                  <StatCounter target={s.target} suffix={s.suffix} label={s.label} />
+                ) : (
+                  <div className="text-center py-7 px-4">
+                    <div className="font-urbanist font-black text-accent text-[clamp(20px,2.2vw,28px)] leading-none mb-0.5">{s.value}</div>
+                    <div className="text-[11px] text-white/50 mb-1.5">{s.sub}</div>
+                    <div className="text-[13px] font-medium text-white/70 uppercase tracking-[0.06em]">{s.label}</div>
+                  </div>
+                )}
               </div>
             ))}
           </div>

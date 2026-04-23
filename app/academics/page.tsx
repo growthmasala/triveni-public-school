@@ -37,7 +37,7 @@ export default function AcademicsPage() {
       />
 
       {/* ICSE Overview */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <SplitSection
             imageSrc="/images/library-girls-studying.jpg"
@@ -51,7 +51,7 @@ export default function AcademicsPage() {
               <div className="bg-surface rounded-md p-6 mb-6 grid grid-cols-2 gap-4">
                 {['CISCE Affiliated', 'School Code: KA-214', 'English Medium', 'Pre-Primary to Grade X', 'Scholastic + Co-Curricular', 'Computer Applications'].map(item => (
                   <div key={item} className="flex items-start gap-2.5 text-[15px] text-body">
-                    <i className="ri-check-double-line text-accent text-lg mt-0.5 flex-shrink-0" />
+                    <i className="ri-check-double-line text-accent text-lg mt-0.5 shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -65,7 +65,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Grade Wings */}
-      <section className="py-[88px] bg-surface">
+      <section className="py-22 bg-surface">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Grade Structure</SectionLabel>
@@ -79,7 +79,7 @@ export default function AcademicsPage() {
             { id: 'middle', tag: 'Stage 3', title: 'Middle School', badge: 'Grades VI – VIII', badgeIcon: 'ri-newspaper-line', img: '/images/classroom-nie-newspaper-times-of-india.jpg', alt: 'Middle school NIE activity with Times of India', desc: 'The middle years are when curiosity turns into critical thinking. Our program introduces deeper subject engagement, real-world connections and competitive preparation.', checks: ['English, Mathematics, Science, History, Geography, Civics', 'NIE partnership with Times of India', 'Ethics as a primary subject', 'Current affairs sessions for competitive exam prep', 'Theatre, Music, Dance and Sports'], reverse: false },
             { id: 'senior', tag: 'Stage 4', title: 'Senior School', badge: 'Grades IX – X', badgeIcon: 'ri-medal-line', img: '/images/library-girls-studying.jpg', alt: 'Senior school students studying for ICSE board exams', desc: 'Senior school is where Triveni students prepare for their ICSE board examination. We combine rigorous academic preparation with our Remediation Analytics platform.', checks: ['Full ICSE curriculum: English, Mathematics, Physics, Chemistry, Biology, Social Studies', 'Remediation Analytics: personalised learning-gap identification', 'Waste-paper recycling project (sustainability)', 'Optional subjects: Dance, Computer Applications', 'Regular mock tests and board preparation sessions'], reverse: true },
           ].map((wing) => (
-            <div key={wing.id} id={wing.id} className="mb-[72px] last:mb-0">
+            <div key={wing.id} id={wing.id} className="mb-18 last:mb-0">
               <SplitSection
                 imageSrc={wing.img}
                 imageAlt={wing.alt}
@@ -94,7 +94,7 @@ export default function AcademicsPage() {
                   <div className="flex flex-col gap-3">
                     {wing.checks.map(c => (
                       <div key={c} className="flex items-start gap-3 text-[15px] text-body">
-                        <i className="ri-check-double-line text-accent text-lg mt-0.5 flex-shrink-0" />
+                        <i className="ri-check-double-line text-accent text-lg mt-0.5 shrink-0" />
                         <span>{c}</span>
                       </div>
                     ))}
@@ -107,7 +107,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Pedagogy */}
-      <section className="py-[88px]" id="pedagogy">
+      <section className="py-22" id="pedagogy">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Our Pedagogy</SectionLabel>
@@ -118,7 +118,7 @@ export default function AcademicsPage() {
             {pedagogy.map((p, i) => (
               <FadeIn key={p.title} delay={(i % 2) * 0.1}>
                 <div className="bg-white rounded-md p-8 border border-border shadow-sm flex gap-5 items-start hover:-translate-y-1 hover:shadow-md hover:border-primary-light transition-all duration-300 group h-full">
-                  <div className="w-14 h-14 bg-primary/[0.08] rounded-md flex items-center justify-center text-primary text-2xl flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <div className="w-14 h-14 bg-primary/[0.08] rounded-md flex items-center justify-center text-primary text-2xl shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                     <i className={p.icon} />
                   </div>
                   <div>
@@ -133,7 +133,7 @@ export default function AcademicsPage() {
       </section>
 
       {/* Clubs */}
-      <section className="py-[88px] bg-surface" id="clubs">
+      <section className="py-22 bg-surface" id="clubs">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Beyond the Classroom</SectionLabel>
@@ -144,7 +144,7 @@ export default function AcademicsPage() {
             {clubs.map((c, i) => (
               <FadeIn key={c.title} delay={i * 0.1}>
                 <div className="bg-white rounded-md p-9 shadow-sm border border-border hover:-translate-y-1.5 hover:shadow-lg hover:border-accent transition-all duration-300 group h-full">
-                  <div className="w-[60px] h-[60px] bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <div className="w-15 h-15 bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                     <i className={c.icon} />
                   </div>
                   <h4 className="font-urbanist font-bold text-[18px] text-[#1A1A2A] mb-2.5">{c.title}</h4>
@@ -166,7 +166,7 @@ export default function AcademicsPage() {
         </div>
       </section>
 
-      <CTABanner heading="Admissions Open for 2025–26" subtext="Give your child the advantage of a modern ICSE education. Seats are limited — enquire today." />
+      <CTABanner heading="Admissions Open for 2026–27" subtext="Give your child the advantage of a modern ICSE education. Seats are limited — enquire today." />
     </>
   )
 }

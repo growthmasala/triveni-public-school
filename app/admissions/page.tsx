@@ -7,8 +7,8 @@ import FadeIn from '@/components/ui/FadeIn'
 import AdmissionsForm from '@/components/sections/AdmissionsForm'
 
 export const metadata: Metadata = {
-  title: 'Admissions 2025–26 | Triveni Public School – ICSE School Bagalagunte Bengaluru',
-  description: 'Apply for admission to Triveni Public School (ICSE, KA-214) in Bagalagunte, Bengaluru. Step-by-step process, age criteria, documents required. Admissions open for 2025–26.',
+  title: 'Admissions 2026–27 | Triveni Public School – ICSE School Bagalagunte Bengaluru',
+  description: 'Apply for admission to Triveni Public School (ICSE, KA-214) in Bagalagunte, Bengaluru. Step-by-step process, age criteria, documents required. Admissions open for 2026–27.',
   alternates: { canonical: 'https://www.trivenipublicschool.in/admissions' },
 }
 
@@ -52,7 +52,7 @@ export default function AdmissionsPage() {
       <PageHero
         title="Join the Triveni Family"
         description="Begin your child's journey at Triveni Public School — quality ICSE education, a nurturing environment, and a community that genuinely cares. Seats are filling fast."
-        badge="Admissions Open for 2025–26"
+        badge="Admissions Open for 2026–27"
       />
 
       {/* Trust mini-cards */}
@@ -63,7 +63,7 @@ export default function AdmissionsPage() {
               { icon: 'ri-award-line', title: 'CISCE Affiliated', desc: 'School Code KA-214 — officially recognised by CISCE, New Delhi' },
               { icon: 'ri-wallet-line', title: 'Affordable Fees', desc: 'Premium ICSE education at fees that make sense for every family' },
               { icon: 'ri-bus-line', title: 'Transport Available', desc: 'Bus routes across North Bengaluru for safe and convenient travel' },
-              { icon: 'ri-star-line', title: '4.2★ Rated', desc: '138 parent reviews on JustDial — consistently praised for quality & care' },
+              { icon: 'ri-parent-line', title: 'Parent App Available', desc: 'Stay connected via our SchoolCanvas app on Google Play — real-time updates and attendance' },
             ].map((c, i) => (
               <FadeIn key={c.title} delay={i * 0.1}>
                 <div className="bg-white rounded-md p-6 text-center shadow-sm border border-border">
@@ -78,7 +78,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Steps */}
-      <section className="py-[88px]">
+      <section className="py-22">
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Step-by-Step Guide</SectionLabel>
@@ -103,7 +103,7 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Form + Sidebar */}
-      <section className="py-[88px] bg-surface" id="enquiry-form">
+      <section className="py-22 bg-surface" id="enquiry-form">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 items-start">
             <div>
@@ -144,7 +144,7 @@ export default function AdmissionsPage() {
                 <ul className="flex flex-col gap-2.5">
                   {documents.map(doc => (
                     <li key={doc} className="flex items-start gap-2.5 text-sm text-body">
-                      <i className="ri-checkbox-circle-fill text-accent flex-shrink-0 mt-0.5" />
+                      <i className="ri-checkbox-circle-fill text-accent shrink-0 mt-0.5" />
                       {doc}
                     </li>
                   ))}
@@ -166,8 +166,74 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
+      {/* Parent Tools */}
+      <section className="py-22">
+        <div className="container-main">
+          <div className="text-center mb-14">
+            <SectionLabel>For Parents</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Stay Connected from Day One</h2>
+            <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">Once your child joins Triveni, two systems keep you informed and involved every single school day.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* SchoolCanvas App */}
+            <FadeIn direction="left">
+              <div className="bg-primary rounded-lg p-10 h-full flex flex-col">
+                <div className="w-14 h-14 bg-white/10 rounded-md flex items-center justify-center text-white text-2xl mb-6">
+                  <i className="ri-smartphone-line" />
+                </div>
+                <h3 className="font-urbanist font-extrabold text-2xl text-white mb-3">SchoolCanvas Parent App</h3>
+                <p className="text-white/70 leading-[1.8] mb-3">Our official Android parent app keeps you connected to your child&apos;s school life in real time — attendance, assignments, announcements and more, right on your phone.</p>
+                <p className="text-white/70 leading-[1.8] mb-6">Access is provided upon enrolment. The app is free to download on Google Play.</p>
+                <ul className="flex flex-col gap-2.5 mb-8">
+                  {['Real-time attendance and progress updates', 'Assignment and homework notifications', 'School announcements and circulars', 'Direct channel between school and home'].map(item => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-white/80">
+                      <i className="ri-check-double-line text-accent text-base shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://play.google.com/store/apps/details?id=schoolcanvas.triveni.publicschool.bangalore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-urbanist font-semibold py-3.5 rounded-pill transition-colors duration-300 text-[15px]"
+                >
+                  <i className="ri-google-play-line" /> Download on Google Play
+                </a>
+              </div>
+            </FadeIn>
+
+            {/* School Diary */}
+            <FadeIn direction="right">
+              <div className="bg-white rounded-lg p-10 shadow-sm border border-border h-full flex flex-col">
+                <div className="w-14 h-14 bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-6">
+                  <i className="ri-book-open-line" />
+                </div>
+                <h3 className="font-urbanist font-extrabold text-2xl text-[#1A1A2A] mb-3">School Diary</h3>
+                <p className="text-muted leading-[1.8] mb-3">Every Triveni student carries a School Diary — a structured, daily two-way communication channel between teachers and parents, signed by both parties every school day.</p>
+                <p className="text-muted leading-[1.8] mb-6">It is not just a homework planner. It is a formal accountability system that keeps parents genuinely informed and teachers genuinely responsive.</p>
+                <ul className="flex flex-col gap-2.5 mb-8">
+                  {['Daily teacher entries on classwork and homework', 'Parent signature confirms home review', 'Formal record through the full academic year', 'Creates a clear home-school communication trail'].map(item => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-body">
+                      <i className="ri-check-double-line text-accent text-base shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-auto text-sm text-muted border-t border-border pt-5">
+                  <i className="ri-information-line text-accent mr-1.5" />
+                  The School Diary is issued to every student at the start of the academic year at no extra cost.
+                </p>
+              </div>
+            </FadeIn>
+
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="py-[88px]">
+      <section className="py-22 bg-surface">
         <div className="container-main max-w-[800px]">
           <div className="text-center mb-14">
             <SectionLabel>Admission FAQs</SectionLabel>
@@ -177,7 +243,7 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      <CTABanner heading="Don't Miss the 2025–26 Admissions Window" subtext="Seats are limited. Fill in the enquiry form above or call us today to secure your child's place." primaryLabel="Enquire Now" primaryHref="/admissions#enquiry-form" secondaryLabel="Find Us" secondaryHref="/contact" />
+      <CTABanner heading="Don't Miss the 2026–27 Admissions Window" subtext="Seats are limited. Fill in the enquiry form above or call us today to secure your child's place." primaryLabel="Enquire Now" primaryHref="/admissions#enquiry-form" secondaryLabel="Find Us" secondaryHref="/contact" />
     </>
   )
 }
