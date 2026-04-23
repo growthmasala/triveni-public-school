@@ -1,65 +1,221 @@
-import Image from "next/image";
+import type { Metadata } from 'next'
+import Hero from '@/components/sections/Hero'
+import CTABanner from '@/components/sections/CTABanner'
+import FAQAccordion from '@/components/sections/FAQAccordion'
+import Testimonials from '@/components/sections/Testimonials'
+import SplitSection from '@/components/sections/SplitSection'
+import SectionLabel from '@/components/ui/SectionLabel'
+import FadeIn from '@/components/ui/FadeIn'
+import Button from '@/components/ui/Button'
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Triveni Public School | Best ICSE School in Bagalagunte, Bengaluru',
+  description: 'Triveni Public School is a co-educational ICSE school in Bagalagunte, Hessarghatta Road, Bengaluru. CISCE affiliated (KA-214). Admissions open for 2025–26.',
+  alternates: { canonical: 'https://www.trivenipublicschool.in/' },
+}
+
+const features = [
+  { icon: 'ri-microscope-line', title: '5E Science Pedagogy', desc: "Hands-on, inquiry-based science using the globally proven 5E model — Engage, Explore, Explain, Elaborate, Evaluate. No rote learning here." },
+  { icon: 'ri-heart-line', title: 'Whole-Child Development', desc: "Ethics as a primary subject, literary clubs, sports, NCC, Scouts — every dimension of a child's personality gets attention and nurturing." },
+  { icon: 'ri-line-chart-line', title: 'Remediation Analytics', desc: "Our data-driven self-learning platform identifies individual learning gaps and delivers targeted remediation — every child progresses at their own pace." },
+  { icon: 'ri-team-line', title: 'Accessible Management', desc: "Parents consistently praise our responsive, warm management team. We treat every family as a partner in their child's growth." },
+]
+
+const programs = [
+  { tag: 'Nursery – KG', title: 'Pre-Primary', desc: 'A vibrant, play-based learning environment that builds curiosity, confidence and foundational skills through exploration and creativity.', img: '/images/classroom-preprimary-colourful-animal-mural.jpg', href: '/academics#preprimary' },
+  { tag: 'Grades I – V', title: 'Primary School', desc: 'Building strong literacy, numeracy and science foundations through the ICSE framework, hands-on activities and club engagements.', img: '/images/library-boy-browsing-books.jpg', href: '/academics#primary' },
+  { tag: 'Grades VI – VIII', title: 'Middle School', desc: 'Critical thinking, NIE partnerships, ethics education and competitive exam prep — turning curious learners into confident thinkers.', img: '/images/classroom-nie-newspaper-times-of-india.jpg', href: '/academics#middle' },
+  { tag: 'Grades IX – X', title: 'Senior School', desc: 'Rigorous ICSE board preparation with personalised remediation analytics, project-based learning and strong examination guidance.', img: '/images/library-girls-studying.jpg', href: '/academics#senior' },
+]
+
+const testimonials = [
+  { name: 'Raghavan S.', role: 'Parent of Grade VII student', initial: 'R', rating: 5, quote: 'The best school in the industry for quality education at affordable cost. The teachers are very dedicated and committed towards their work. My son has shown tremendous growth in confidence and discipline.' },
+  { name: 'Priya M.', role: 'Parent of Grade IV student', initial: 'P', rating: 5, quote: "Management is too supportive — with the teaching team and with parents alike. The school truly cares about every child, not just the toppers. I've seen a great level of confidence building in my daughter every single day." },
+  { name: 'Karthik N.', role: 'Parent of Grade IX student', initial: 'K', rating: 5, quote: "Thankful to the teachers and staff for bringing my son to a good shape — both academically and in personality. The school's approach to ethics and character development is something no other school offers in this area." },
+  { name: 'Anitha V.', role: 'Parent of Grade V student', initial: 'A', rating: 5, quote: 'The Science activities and the NIE programme have made my child genuinely love learning. She comes home excited to talk about what she discovered — which is rare. The faculty here is truly exceptional.' },
+]
+
+const faqs = [
+  { question: 'Which board does Triveni Public School follow?', answer: 'Triveni Public School is affiliated with the Council for Indian School Certificate Examination (CISCE), New Delhi. Our school code is KA-214. We offer the ICSE curriculum from Grade I through Grade X.' },
+  { question: 'What grades does the school offer?', answer: 'We offer classes from Pre-Primary (Nursery and KG) through Grade X — covering Pre-Primary, Primary (I–V), Middle (VI–VIII) and Senior School (IX–X).' },
+  { question: 'Is the school located near Hessarghatta Road / Bagalagunte?', answer: 'Yes. We are at No. 28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Mallasandra, T. Dasarahalli, Bengaluru – 560073.' },
+  { question: 'How do I apply for admission?', answer: 'Visit our <a href="/admissions" class="text-accent underline">Admissions page</a> or fill in the enquiry form. Our team will contact you within 24 hours.' },
+  { question: 'Does the school have a transport / bus facility?', answer: 'Yes, Triveni Public School provides transport across several routes in North Bengaluru. Please contact the school office to confirm coverage for your area.' },
+]
+
+const galleryImages = [
+  { src: '/images/event-independence-day-aerial-view.jpg', alt: 'Independence Day celebration', wide: true },
+  { src: '/images/event-janmashtami-kids-costumes-steps.jpg', alt: 'Janmashtami celebration', wide: false },
+  { src: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band', wide: false },
+  { src: '/images/event-sports-day-yuva-kreedotsava-2025.jpg', alt: 'Sports Day 2025', wide: true },
+]
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'School',
+  name: 'Triveni Public School',
+  description: 'Co-educational ICSE school in Bagalagunte, Bengaluru affiliated with CISCE (School Code KA-214).',
+  url: 'https://www.trivenipublicschool.in',
+  address: { '@type': 'PostalAddress', streetAddress: 'No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte', addressLocality: 'Bengaluru', addressRegion: 'Karnataka', postalCode: '560073', addressCountry: 'IN' },
+  foundingDate: '2007',
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.2', reviewCount: '138' },
+}
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
+      <Hero />
+
+      {/* Why Choose Triveni */}
+      <section className="py-[88px]">
+        <div className="container-main">
+          <div className="text-center mb-14">
+            <SectionLabel>Why Triveni Public School</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Premium Pedagogy at Affordable Fees</h2>
+            <p className="text-muted text-[17px] leading-[1.75] max-w-[560px] mx-auto">Parents across Bagalagunte, Mallasandra and T. Dasarahalli choose us for a reason — quality education at fees that make sense for every family.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((f, i) => (
+              <FadeIn key={f.title} delay={i * 0.1}>
+                <div className="bg-white rounded-md p-9 shadow-sm border border-border hover:-translate-y-1.5 hover:shadow-lg hover:border-accent transition-all duration-300 group h-full">
+                  <div className="w-[60px] h-[60px] bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                    <i className={f.icon} />
+                  </div>
+                  <h4 className="font-urbanist font-bold text-[18px] text-[#1A1A2A] mb-2.5">{f.title}</h4>
+                  <p className="text-muted text-sm leading-[1.7]">{f.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Academic Programs */}
+      <section className="py-[88px] bg-surface">
+        <div className="container-main">
+          <div className="text-center mb-14">
+            <SectionLabel>Academic Programs</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Education for Every Stage of Growth</h2>
+            <p className="text-muted text-[17px] leading-[1.75] max-w-[560px] mx-auto">From playful early years to focused ICSE preparation — our programs are designed to bring out the best in every child at every stage.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {programs.map((p, i) => (
+              <FadeIn key={p.title} delay={i * 0.1}>
+                <div className="bg-white rounded-md overflow-hidden shadow-sm border border-border hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
+                  <div className="relative h-[200px] overflow-hidden flex-shrink-0">
+                    <Image src={p.img} alt={p.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
+                    <p className="text-accent text-[12px] font-bold uppercase tracking-[0.1em] mb-2">{p.tag}</p>
+                    <h4 className="font-urbanist font-extrabold text-xl text-[#1A1A2A] mb-2.5">{p.title}</h4>
+                    <p className="text-muted text-sm leading-[1.7] mb-4 flex-1">{p.desc}</p>
+                    <Link href={p.href} className="inline-flex items-center gap-1.5 text-primary font-urbanist font-semibold text-sm border-2 border-primary rounded-pill px-5 py-2 hover:bg-primary hover:text-white transition-all duration-300 self-start">
+                      Learn More <i className="ri-arrow-right-line" />
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
-  );
+      </section>
+
+      {/* Pedagogy Split */}
+      <section className="py-[88px]">
+        <div className="container-main">
+          <SplitSection
+            imageSrc="/images/classroom-nie-newspaper-times-of-india.jpg"
+            imageAlt="Students engaged in NIE activity with Times of India"
+            imageBadge="NIE Partner: Times of India"
+            imageBadgeIcon="ri-newspaper-line"
+          >
+            <FadeIn direction="right">
+              <SectionLabel>Our Pedagogy</SectionLabel>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Teaching the Way Children Actually Learn</h2>
+              <p className="text-muted leading-[1.8] mb-2">We do not teach to the textbook. We teach to the child. Our programs are built around how children genuinely engage, question and retain knowledge.</p>
+              <div className="flex flex-col gap-3.5 mt-6">
+                {[
+                  ['5E Inquiry Science:', 'Students Engage, Explore, Explain, Elaborate and Evaluate — building real conceptual understanding.'],
+                  ['Remediation Analytics:', 'Data-driven identification of individual learning gaps with targeted support for each student.'],
+                  ['Ethics as a Subject:', 'Systematic, resource-backed moral education — structured character formation.'],
+                  ['NIE with Times of India:', 'Real-world journalism through NIE Play Fest, Fun Fest, seminars and quiz competitions.'],
+                  ['Competitive Exam Prep:', 'Structured sessions preparing students for national and international-level exams.'],
+                ].map(([bold, rest]) => (
+                  <div key={bold} className="flex items-start gap-3 text-[15px] text-body">
+                    <i className="ri-check-double-line text-accent text-lg mt-0.5 flex-shrink-0" />
+                    <span><strong>{bold}</strong> {rest}</span>
+                  </div>
+                ))}
+              </div>
+              <Button href="/academics" variant="accent" className="mt-8">
+                <i className="ri-book-open-line" /> Explore Our Academics
+              </Button>
+            </FadeIn>
+          </SplitSection>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-[88px] bg-surface">
+        <div className="container-main">
+          <div className="text-center mb-14">
+            <SectionLabel>Parent Testimonials</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Trusted by Families Across North Bengaluru</h2>
+            <p className="text-muted text-[17px] leading-[1.75] max-w-[560px] mx-auto">Hear directly from the parents who have entrusted their children to Triveni Public School.</p>
+          </div>
+          <Testimonials items={testimonials} />
+        </div>
+      </section>
+
+      {/* Gallery Preview */}
+      <section className="py-[88px]">
+        <div className="container-main">
+          <div className="flex items-end justify-between flex-wrap gap-5 mb-12">
+            <div>
+              <SectionLabel>School Life</SectionLabel>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-3">Beyond the Classroom</h2>
+              <p className="text-muted text-[17px] max-w-[500px] leading-[1.75]">Sports days, NCC camps, Janmashtami celebrations, Republic Day marches — life at Triveni is rich, vibrant and memorable.</p>
+            </div>
+            <Link href="/life" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-primary border-2 border-primary rounded-pill px-7 py-3.5 hover:bg-primary hover:text-white transition-all duration-300">
+              View All Events <i className="ri-arrow-right-line" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {galleryImages.map(({ src, alt, wide }) => (
+              <FadeIn key={src} className={wide ? 'lg:col-span-2' : ''}>
+                <div className={`rounded-md overflow-hidden group cursor-pointer relative ${wide ? 'aspect-[2/1]' : 'aspect-[4/3]'}`}>
+                  <Image src={src} alt={alt} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 66vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white text-3xl">
+                    <i className="ri-image-line" />
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABanner heading="Admissions Open for 2025–26" subtext="Seats are limited. Enquire today to secure your child's place at Triveni Public School." />
+
+      {/* FAQ */}
+      <section className="py-[88px] bg-surface">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-[72px] items-start">
+            <div>
+              <SectionLabel>FAQs</SectionLabel>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Questions Parents Ask</h2>
+              <p className="text-muted text-[17px] leading-[1.75]">
+                {"Can't find your answer? "}<Link href="/contact" className="text-accent">Contact us directly</Link> — we are happy to help.
+              </p>
+              <Button href="/admissions" variant="primary" className="mt-8">View Admission Guide</Button>
+            </div>
+            <FAQAccordion items={faqs} />
+          </div>
+        </div>
+      </section>
+    </>
+  )
 }

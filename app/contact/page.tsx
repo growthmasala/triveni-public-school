@@ -1,0 +1,180 @@
+import type { Metadata } from 'next'
+import PageHero from '@/components/sections/PageHero'
+import CTABanner from '@/components/sections/CTABanner'
+import SectionLabel from '@/components/ui/SectionLabel'
+import FadeIn from '@/components/ui/FadeIn'
+import ContactForm from '@/components/sections/ContactForm'
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Triveni Public School – Hessarghatta Road, Bagalagunte, Bengaluru',
+  description: 'Contact Triveni Public School. Located at No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Bengaluru 560073. Call, WhatsApp or email us.',
+  alternates: { canonical: 'https://www.trivenipublicschool.in/contact' },
+}
+
+const areas = ['Bagalagunte', 'Mallasandra', 'T. Dasarahalli', 'Nagasandra', 'Hessarghatta Road', 'Peenya', 'Yeshwanthpur', 'Your Area?']
+
+const testimonials = [
+  { initial: 'S', name: 'Suresh K.', role: 'Parent · JustDial Review', rating: 5, quote: 'The best school in the industry for quality education at affordable cost. Dedicated and committed teachers, supportive management.' },
+  { initial: 'M', name: 'Manjula R.', role: 'Parent · JustDial Review', rating: 5, quote: 'Great level of confidence in my son — improvement in personality, discipline and academic skills. I am very happy with this school.' },
+  { initial: 'V', name: 'Vijay N.', role: 'Parent · JustDial Review', rating: 5, quote: 'Management is too supportive with teaching team as well as with parents. Thankful to the teachers and staff for all the progress we\'ve seen.' },
+]
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': ['School', 'LocalBusiness'],
+  name: 'Triveni Public School',
+  telephone: '+918023721148',
+  email: 'info@trivenipublicschool.in',
+  address: { '@type': 'PostalAddress', streetAddress: 'No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Mallasandra, T. Dasarahalli', addressLocality: 'Bengaluru', addressRegion: 'Karnataka', postalCode: '560073', addressCountry: 'IN' },
+  openingHoursSpecification: { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '17:00' },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.2', reviewCount: '138' },
+}
+
+export default function ContactPage() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
+      <PageHero
+        title="Get in Touch"
+        description="We'd love to hear from you. Whether you have a question about admissions, curriculum or want to visit — reach out and we'll respond promptly."
+      />
+
+      {/* Quick contact cards */}
+      <section className="py-14 bg-surface">
+        <div className="container-main">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: 'ri-phone-fill', title: 'Call Us', desc: '+91 80 2372 1148', sub: 'Mon – Sat, 9 AM – 4 PM', href: 'tel:+918023721148' },
+              { icon: 'ri-whatsapp-line', title: 'WhatsApp', desc: '+91 80 2372 1148', sub: 'Quick responses', href: 'https://wa.me/918023721148', iconColor: 'text-[#25D366]', iconBg: 'bg-[#25D366]/10' },
+              { icon: 'ri-mail-fill', title: 'Email Us', desc: 'info@trivenipublicschool.in', sub: 'Response within 24 hours', href: 'mailto:info@trivenipublicschool.in' },
+              { icon: 'ri-map-pin-fill', title: 'Visit Us', desc: 'Hessarghatta Main Road', sub: 'Bagalagunte, Bengaluru 560073', href: 'https://maps.google.com/maps?q=Triveni+Public+School,+Hessarghatta+Main+Road,+Bagalagunte,+Bengaluru' },
+            ].map((c, i) => (
+              <FadeIn key={c.title} delay={i * 0.1}>
+                <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="bg-white rounded-md p-6 shadow-sm border border-border flex gap-4 items-start hover:shadow-md hover:border-accent transition-all duration-300 block no-underline">
+                  <div className={`w-[52px] h-[52px] rounded-md flex items-center justify-center text-xl flex-shrink-0 ${c.iconBg ?? 'bg-accent/10'} ${c.iconColor ?? 'text-accent'}`}>
+                    <i className={c.icon} />
+                  </div>
+                  <div>
+                    <h4 className="font-urbanist font-bold text-base text-[#1A1A2A] mb-1">{c.title}</h4>
+                    <p className="text-muted text-sm leading-[1.5]">{c.desc}</p>
+                    <p className="text-muted text-[12px]">{c.sub}</p>
+                  </div>
+                </a>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Form + Map */}
+      <section className="py-[88px]">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <SectionLabel>Send a Message</SectionLabel>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-2">We&apos;d Love to Hear from You</h2>
+              <p className="text-muted mb-8">Fill in the form below and our team will get back to you within 24 hours.</p>
+              <ContactForm />
+            </div>
+            <FadeIn direction="right">
+              <SectionLabel>Find Us</SectionLabel>
+              <h2 className="font-urbanist font-extrabold text-[clamp(24px,3vw,36px)] text-[#1A1A2A] mb-6">We&apos;re on Hessarghatta Main Road</h2>
+              <div className="rounded-lg overflow-hidden shadow-md h-[380px] mb-8">
+                <iframe
+                  src="https://maps.google.com/maps?q=Triveni+Public+School,+Nagasandra+Post,+Hessarghatta+Main+Road,+Bagalagunte,+Bengaluru+560073&output=embed&hl=en"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Triveni Public School on Google Maps"
+                />
+              </div>
+              <div className="bg-surface rounded-md p-7 flex flex-col gap-4">
+                {[
+                  { icon: 'ri-map-pin-2-line', label: 'Address', value: 'No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Bengaluru – 560073' },
+                  { icon: 'ri-phone-line', label: 'Phone', value: '+91 80 2372 1148', href: 'tel:+918023721148' },
+                  { icon: 'ri-mail-line', label: 'Email', value: 'info@trivenipublicschool.in', href: 'mailto:info@trivenipublicschool.in' },
+                  { icon: 'ri-time-line', label: 'Hours', value: 'Monday – Saturday: 8:00 AM – 5:00 PM' },
+                  { icon: 'ri-government-line', label: 'CISCE Code', value: 'KA-214' },
+                ].map(({ icon, label, value, href }) => (
+                  <div key={label} className="flex gap-3 items-start">
+                    <div className="w-10 h-10 bg-accent/10 rounded-sm flex items-center justify-center text-accent text-[18px] flex-shrink-0">
+                      <i className={icon} />
+                    </div>
+                    <div>
+                      <p className="font-urbanist font-bold text-[15px] text-[#1A1A2A] mb-0.5">{label}</p>
+                      {href ? <a href={href} className="text-sm text-accent font-semibold hover:underline">{value}</a> : <p className="text-sm text-muted leading-[1.6]">{value}</p>}
+                    </div>
+                  </div>
+                ))}
+                <div className="flex gap-3 mt-2">
+                  <a href="https://maps.google.com/maps?q=Triveni+Public+School,+Hessarghatta+Main+Road,+Bagalagunte,+Bengaluru" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white font-urbanist font-semibold text-sm py-3 rounded-pill transition-colors">
+                    <i className="ri-navigation-line" /> Get Directions
+                  </a>
+                  <a href="https://wa.me/918023721148" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-urbanist font-semibold text-sm py-3 rounded-pill transition-all">
+                    <i className="ri-whatsapp-line" /> WhatsApp
+                  </a>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Areas served */}
+      <section className="py-[88px] bg-surface">
+        <div className="container-main">
+          <div className="text-center mb-10">
+            <SectionLabel>Serving North Bengaluru</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">We Serve Families Across These Areas</h2>
+            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Triveni Public School is conveniently located for families across the North-West Bengaluru corridor. Bus routes cover most of these areas.</p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {areas.map((area, i) => (
+              <FadeIn key={area} delay={(i % 4) * 0.1}>
+                <div className="bg-white rounded-md p-5 text-center shadow-sm border border-border">
+                  <i className={`${area === 'Your Area?' ? 'ri-bus-line text-primary' : 'ri-map-pin-line text-accent'} text-3xl block mb-2.5`} />
+                  <h4 className="font-urbanist font-bold text-[15px] text-[#1A1A2A] mb-1">{area}</h4>
+                  <p className="text-muted text-[13px]">{area === 'Your Area?' ? <a href="tel:+918023721148" className="text-accent">Call us</a> : i < 4 ? 'Primary area' : 'Route available'}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="py-[88px]">
+        <div className="container-main">
+          <div className="text-center mb-10">
+            <SectionLabel>What Parents Say</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Rated 4.2★ by 138+ Parents</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <FadeIn key={t.name} delay={i * 0.1}>
+                <div className="bg-white rounded-md p-8 shadow-md border border-border h-full">
+                  <div className="flex gap-1 text-accent mb-4">{Array.from({length: t.rating}).map((_, j) => <i key={j} className="ri-star-fill" />)}</div>
+                  <p className="text-body text-base leading-[1.75] italic mb-6">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center font-urbanist font-extrabold text-xl text-primary">{t.initial}</div>
+                    <div>
+                      <p className="font-urbanist font-bold text-[#1A1A2A] text-base">{t.name}</p>
+                      <p className="text-muted text-[13px]">{t.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a href="https://www.justdial.com/Bangalore/Triveni-Public-School-Triveni-Service-Station-Hessargatta-Main-Road/080PXX80-XX80-110328004903-Q6U2_BZDET" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-primary border-2 border-primary rounded-pill px-7 py-3.5 hover:bg-primary hover:text-white transition-all duration-300">
+              <i className="ri-external-link-line" /> Read All 138 Reviews on JustDial
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <CTABanner heading="Ready to Visit Triveni Public School?" subtext="Schedule a campus tour and see for yourself why families across North Bengaluru choose us." primaryLabel="Enquire for Admission" secondaryLabel="Get Directions" secondaryHref="https://maps.google.com/maps?q=Triveni+Public+School,+Hessarghatta+Main+Road,+Bagalagunte,+Bengaluru" />
+    </>
+  )
+}
