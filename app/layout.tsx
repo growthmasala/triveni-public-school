@@ -3,7 +3,7 @@ import { Inter, Urbanist } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import SchoolChatbot from '@/components/ui/SchoolChatbot'
+import ChatbotLoader from '@/components/ui/ChatbotLoader'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,13 +41,13 @@ export const metadata: Metadata = {
     siteName: 'Triveni Public School',
     title: 'Triveni Public School | Best ICSE School in Bagalagunte, Bengaluru',
     description: 'Quality ICSE education in Bagalagunte, Bengaluru. CISCE affiliated (KA-214). Admissions open for 2026–27.',
-    images: [{ url: '/images/hero-campus.png', width: 1200, height: 630, alt: 'Triveni Public School Campus' }],
+    images: [{ url: '/images/hero-campus.jpg', width: 1200, height: 630, alt: 'Triveni Public School Campus' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Triveni Public School | Best ICSE School in Bagalagunte, Bengaluru',
     description: 'Quality ICSE education in Bagalagunte, Bengaluru. CISCE affiliated (KA-214).',
-    images: ['/images/hero-campus.png'],
+    images: ['/images/hero-campus.jpg'],
   },
   icons: {
     icon: '/images/triveni-logo.png',
@@ -59,15 +59,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${urbanist.variable}`} data-scroll-behavior="smooth">
-      <head>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.7.0/fonts/remixicon.css" />
-      </head>
+      <head />
       <body className="font-inter">
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <SchoolChatbot />
+        <ChatbotLoader />
       </body>
     </html>
   )

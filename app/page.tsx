@@ -1,14 +1,17 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import Hero from '@/components/sections/Hero'
 import CTABanner from '@/components/sections/CTABanner'
 import FAQAccordion from '@/components/sections/FAQAccordion'
-import TestimonialsMarquee from '@/components/sections/TestimonialsMarquee'
-import FourPanelFeatures from '@/components/sections/FourPanelFeatures'
 import SectionLabel from '@/components/ui/SectionLabel'
 import FadeIn from '@/components/ui/FadeIn'
 import Button from '@/components/ui/Button'
 import Image from 'next/image'
 import Link from 'next/link'
+
+// Below-fold heavy components — lazy loaded after LCP
+const FourPanelFeatures   = dynamic(() => import('@/components/sections/FourPanelFeatures'))
+const TestimonialsMarquee = dynamic(() => import('@/components/sections/TestimonialsMarquee'))
 
 export const metadata: Metadata = {
   title: 'Triveni Public School | Best ICSE School in Bagalagunte, Bengaluru',
@@ -90,7 +93,7 @@ export default function HomePage() {
                     <h4 className="font-urbanist font-extrabold text-xl text-[#1A1A2A] mb-2.5">{p.title}</h4>
                     <p className="text-muted text-sm leading-[1.7] mb-4 flex-1">{p.desc}</p>
                     <Link href={p.href} className="inline-flex items-center gap-1.5 text-primary font-urbanist font-semibold text-sm border-2 border-primary rounded-pill px-5 py-2 hover:bg-primary hover:text-white transition-all duration-300 self-start">
-                      Learn More <i className="ri-arrow-right-line" />
+                      Explore {p.title} <i className="ri-arrow-right-line" />
                     </Link>
                   </div>
                 </div>
