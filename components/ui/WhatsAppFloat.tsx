@@ -1,7 +1,7 @@
 export default function WhatsAppFloat() {
   return (
     <a
-      href="https://wa.me/918023721148?text=Hello%2C%20I%20am%20interested%20in%20admission%20at%20Triveni%20Public%20School."
+      href="https://wa.me/919740701861?text=Hello%2C%20I%20am%20interested%20in%20admission%20at%20Triveni%20Balavikas%20Central%20School."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

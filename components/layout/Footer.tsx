@@ -8,23 +8,24 @@ const quickLinks = [
   { href: '/pedagogy',   label: 'Our Pedagogy' },
   { href: '/admissions', label: 'Admissions' },
   { href: '/life',       label: 'School Life' },
+  { href: '/careers',    label: 'Careers' },
   { href: '/contact',    label: 'Contact' },
 ]
 
 const academicLinks = [
-  { href: '/academics#preprimary', label: 'Pre-Primary' },
-  { href: '/academics#primary',    label: 'Primary (I–V)' },
-  { href: '/academics#middle',     label: 'Middle School (VI–VIII)' },
-  { href: '/academics#senior',     label: 'Senior School (IX–X)' },
-  { href: '/pedagogy',             label: 'Our Pedagogy' },
-  { href: '/academics#clubs',      label: 'Clubs & Activities' },
+  { href: '/academics#primary', label: 'Primary School (I–V)' },
+  { href: '/academics#middle',  label: 'Middle School (VI–VIII)' },
+  { href: '/pedagogy',          label: 'Our Pedagogy' },
+  { href: '/academics#clubs',   label: 'Clubs & Activities' },
+  { href: '/life',              label: 'School Life' },
+  { href: '/contact',           label: 'Transport & Areas' },
 ]
 
 const socials = [
-  { icon: 'ri-facebook-fill',  href: 'https://www.facebook.com/p/Triveni-Public-School-100087797836248/', label: 'Facebook' },
-  { icon: 'ri-instagram-line', href: '#',  label: 'Instagram' },
-  { icon: 'ri-youtube-line',   href: '#',  label: 'YouTube' },
-  { icon: 'ri-whatsapp-line',  href: 'https://wa.me/918023721148', label: 'WhatsApp' },
+  { icon: 'ri-facebook-fill',  href: '#', label: 'Facebook' },
+  { icon: 'ri-instagram-line', href: '#', label: 'Instagram' },
+  { icon: 'ri-youtube-line',   href: '#', label: 'YouTube' },
+  { icon: 'ri-whatsapp-line',  href: 'https://wa.me/919740701861', label: 'WhatsApp' },
 ]
 
 export default function Footer() {
@@ -37,7 +38,7 @@ export default function Footer() {
           <div>
             <Image
               src="/images/triveni-logo.png"
-              alt="Triveni Public School"
+              alt="Triveni Balavikas Central School"
               width={64}
               height={64}
               sizes="64px"
@@ -45,7 +46,7 @@ export default function Footer() {
               className="mb-5"
             />
             <p className="text-sm leading-7 text-white/60 mb-6 max-w-[300px]">
-              A CISCE-affiliated co-educational ICSE school in Bagalagunte, Bengaluru, nurturing young minds with quality education and strong values since 2007.
+              A co-educational ICSE school in Bagalagunte, Bengaluru, committed to nurturing young minds through quality education, strong values and a culture of holistic development.
             </p>
             <div className="flex gap-3">
               {socials.map(({ icon, href, label }) => (
@@ -96,10 +97,11 @@ export default function Footer() {
             <p className="font-urbanist font-bold text-white text-base mb-5">Contact Us</p>
             <div className="flex flex-col gap-3">
               {[
-                { icon: 'ri-map-pin-2-line', content: 'No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Bengaluru – 560073' },
-                { icon: 'ri-phone-line',     content: '+91 80 2372 1148', href: 'tel:+918023721148' },
-                { icon: 'ri-mail-line',      content: 'info@trivenipublicschool.in', href: 'mailto:info@trivenipublicschool.in' },
-                { icon: 'ri-time-line',      content: 'Mon – Sat: 8:00 AM – 5:00 PM' },
+                { icon: 'ri-map-pin-2-line', content: 'No. 39/1, Hesaraghatta Main Road, Bagalagunte, Nagasandra Post, Bengaluru – 560073' },
+                { icon: 'ri-phone-line',     content: '080 2839 7648',  href: 'tel:+918028397648' },
+                { icon: 'ri-whatsapp-line',  content: '+91 97407 01861', href: 'https://wa.me/919740701861' },
+                { icon: 'ri-mail-line',      content: 'trivenitrust@gmail.com', href: 'mailto:trivenitrust@gmail.com' },
+                { icon: 'ri-time-line',      content: 'Mon – Fri: 9:00 AM – 3:00 PM · Sat: 9:00 AM – 2:00 PM' },
               ].map(({ icon, content, href }) => (
                 <div key={icon} className="flex gap-2.5 items-start">
                   <i className={`${icon} text-accent mt-0.5 shrink-0`} />
@@ -117,7 +119,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.08] py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-sm text-white/45 text-center md:text-left">
-            © 2026 Triveni Public School, Bengaluru. All rights reserved. | CISCE School Code: KA-214
+            © 2026 Triveni Balavikas Central School, Bengaluru. All rights reserved.
           </p>
           <p className="text-sm text-white/45">
             Built by <a href="https://growthmasala.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Growth Masala</a>

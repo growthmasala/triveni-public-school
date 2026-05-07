@@ -8,17 +8,17 @@ type StatItem =
   | { kind: 'text'; value: string; sub: string; label: string }
 
 const stats: StatItem[] = [
-  { kind: 'counter', target: 18, suffix: '+', label: 'Years of Excellence' },
-  { kind: 'text', value: 'ICSE', sub: 'CISCE, New Delhi', label: 'Board Affiliated' },
-  { kind: 'text', value: 'Nursery – X', sub: 'Pre-Primary to Grade X', label: 'All Grades Covered' },
-  { kind: 'text', value: 'NIE Partner', sub: 'Times of India', label: 'Newspaper in Education' },
+  { kind: 'counter', target: 25, suffix: '+', label: 'Years of Excellence' },
+  { kind: 'text', value: 'ICSE', sub: 'Curriculum', label: 'Academic Framework' },
+  { kind: 'text', value: 'I – VIII', sub: 'Primary & Middle School', label: 'Grades Offered' },
+  { kind: 'text', value: 'NIE Partner', sub: 'Times of India & The Hindu', label: 'Newspaper in Education' },
 ]
 
 const trust = [
-  { icon: 'ri-checkbox-circle-fill', text: 'Founded 2007' },
-  { icon: 'ri-checkbox-circle-fill', text: 'ICSE Board · KA-214' },
-  { icon: 'ri-checkbox-circle-fill', text: 'NIE Partner: Times of India' },
-  { icon: 'ri-checkbox-circle-fill', text: 'Pre-Primary to Grade X' },
+  { icon: 'ri-checkbox-circle-fill', text: '25+ Years of Excellence' },
+  { icon: 'ri-checkbox-circle-fill', text: 'ICSE Curriculum' },
+  { icon: 'ri-checkbox-circle-fill', text: 'NIE Partner: Times of India & The Hindu' },
+  { icon: 'ri-checkbox-circle-fill', text: 'Grades I to VIII' },
 ]
 
 export default function Hero() {
@@ -29,10 +29,11 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-campus.jpg"
-          alt="Triveni Public School campus"
+          alt="Triveni Balavikas Central School campus"
           fill
           priority
-          quality={85}
+          fetchPriority="high"
+          quality={72}
           sizes="100vw"
           className="object-cover object-right"
         />
@@ -49,7 +50,7 @@ export default function Hero() {
 
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/40 text-accent-light font-urbanist text-[12px] font-bold tracking-[0.08em] uppercase px-3 py-1.5 rounded-pill mb-5">
-                <i className="ri-award-fill text-xs" /> CISCE Affiliated &bull; School Code: KA-214
+                <i className="ri-award-fill text-xs" /> 25+ Years of Excellence &bull; Triveni Group of Institutions
               </div>
 
               {/* Headline */}
@@ -59,7 +60,7 @@ export default function Hero() {
 
               {/* Description */}
               <p className="text-white/80 text-base leading-[1.75] mb-8 max-w-135">
-                Triveni Public School offers quality ICSE education in Bagalagunte, Bengaluru — blending modern pedagogy, strong values, and a nurturing environment from Pre-Primary to Grade X.
+                Triveni Balavikas Central School offers quality ICSE education in Bagalagunte, Bengaluru — blending modern pedagogy, strong values, and a nurturing environment from Grade I to Grade VIII.
               </p>
 
               {/* Buttons */}

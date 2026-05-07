@@ -1,7 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { useEffect, useRef, ReactNode } from 'react'
 
 interface FadeInProps {
   children: ReactNode
@@ -10,31 +9,39 @@ interface FadeInProps {
   className?: string
 }
 
-export default function FadeIn({
-  children,
-  delay = 0,
-  direction = 'up',
-  className = '',
-}: FadeInProps) {
-  const initial = {
-    opacity: 0,
-    y: direction === 'up'    ?  28 : 0,
-    x: direction === 'left'  ? -28 : direction === 'right' ? 28 : 0,
-  }
+const dirClass: Record<string, string> = {
+  up:    'fi-up',
+  left:  'fi-left',
+  right: 'fi-right',
+  none:  'fi-none',
+}
+
+export default function FadeIn({ children, delay = 0, direction = 'up', className = '' }: FadeInProps) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.animationDelay = delay > 0 ? `${delay}s` : ''
+          el.classList.remove('fi-hidden')
+          el.classList.add(dirClass[direction] ?? 'fi-up')
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.08 }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [delay, direction])
 
   return (
-    <motion.div
-      initial={initial}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, amount: 0.08 }}
-      transition={{
-        duration: 0.6,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className={className}
-    >
+    <div ref={ref} className={`fi-hidden ${className}`}>
       {children}
-    </motion.div>
+    </div>
   )
 }

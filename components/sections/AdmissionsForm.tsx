@@ -14,7 +14,7 @@ type FormData = {
   message: string
 }
 
-const grades = ['Nursery','LKG','UKG','Grade I','Grade II','Grade III','Grade IV','Grade V','Grade VI','Grade VII','Grade VIII','Grade IX','Grade X']
+const grades = ['Grade I','Grade II','Grade III','Grade IV','Grade V','Grade VI','Grade VII','Grade VIII']
 
 export default function AdmissionsForm() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>()
@@ -50,7 +50,7 @@ export default function AdmissionsForm() {
         </div>
         <div>
           <label className="block font-urbanist font-semibold text-sm text-[#1A1A2A] mb-2">Phone / WhatsApp *</label>
-          <input {...register('phone', { required: true })} className={inputCls(!!errors.phone)} placeholder="+91 80 2372 1148" />
+          <input {...register('phone', { required: true })} className={inputCls(!!errors.phone)} placeholder="+91 97407 01861" />
         </div>
       </div>
       <div className="mb-5">
@@ -86,7 +86,7 @@ export default function AdmissionsForm() {
         <i className="ri-send-plane-line" /> Send Enquiry
       </button>
       <p className="text-center text-muted text-[13px] mt-3">
-        Or call us directly: <a href="tel:+918023721148" className="text-accent font-semibold">+91 80 2372 1148</a>
+        Or call us directly: <a href="tel:+918028397648" className="text-accent font-semibold">080 2839 7648</a>
       </p>
     </form>
   )

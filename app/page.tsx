@@ -1,56 +1,67 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 import Hero from '@/components/sections/Hero'
 import CTABanner from '@/components/sections/CTABanner'
 import FAQAccordion from '@/components/sections/FAQAccordion'
+import FourPanelFeatures from '@/components/sections/FourPanelFeatures'
+import TestimonialsMarquee from '@/components/sections/TestimonialsMarquee'
 import SectionLabel from '@/components/ui/SectionLabel'
 import FadeIn from '@/components/ui/FadeIn'
 import Button from '@/components/ui/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// Below-fold heavy components — lazy loaded after LCP
-const FourPanelFeatures   = dynamic(() => import('@/components/sections/FourPanelFeatures'))
-const TestimonialsMarquee = dynamic(() => import('@/components/sections/TestimonialsMarquee'))
-
 export const metadata: Metadata = {
-  title: 'Triveni Public School | Best ICSE School in Bagalagunte, Bengaluru',
-  description: 'Triveni Public School is a co-educational ICSE school in Bagalagunte, Hessarghatta Road, Bengaluru. CISCE affiliated (KA-214). Admissions open for 2026–27.',
-  alternates: { canonical: 'https://www.trivenipublicschool.in/' },
+  title: 'Triveni Balavikas Central School | ICSE School in Bagalagunte, Bengaluru',
+  description: 'Triveni Balavikas Central School is a co-educational ICSE school in Bagalagunte, Bengaluru, offering Grades I to VIII. Admissions open for 2026–2027.',
+  alternates: { canonical: 'https://www.trivenibalavikas.in/' },
 }
 
 
 const programs = [
-  { tag: 'Nursery – KG', title: 'Pre-Primary', desc: 'A vibrant, play-based learning environment that builds curiosity, confidence and foundational skills through exploration and creativity.', img: '/images/classroom-preprimary-colourful-animal-mural.jpg', href: '/academics#preprimary' },
-  { tag: 'Grades I – V', title: 'Primary School', desc: 'Building strong literacy, numeracy and science foundations through the ICSE framework, hands-on activities and club engagements.', img: '/images/library-boy-browsing-books.jpg', href: '/academics#primary' },
-  { tag: 'Grades VI – VIII', title: 'Middle School', desc: 'Critical thinking, NIE partnerships, ethics education and competitive exam prep — turning curious learners into confident thinkers.', img: '/images/classroom-nie-newspaper-times-of-india.jpg', href: '/academics#middle' },
-  { tag: 'Grades IX – X', title: 'Senior School', desc: 'Rigorous ICSE board preparation with personalised remediation analytics, project-based learning and strong examination guidance.', img: '/images/library-girls-studying.jpg', href: '/academics#senior' },
+  {
+    tag: 'Grades I – V',
+    title: 'Primary School',
+    desc: 'Building strong literacy, numeracy and science foundations through the ICSE framework, hands-on activities and engaging club experiences.',
+    img: '/images/students/student-boy-writing.png',
+    bg: 'from-accent/20 via-accent/5 to-white',
+    href: '/academics#primary',
+  },
+  {
+    tag: 'Grades VI – VIII',
+    title: 'Middle School',
+    desc: 'Critical thinking, NIE partnerships with The Times of India and The Hindu, ethics as a core subject and competitive exam preparation — turning curious learners into confident thinkers.',
+    img: '/images/students/student-girl-confident.png',
+    bg: 'from-primary/15 via-primary/5 to-white',
+    href: '/academics#middle',
+  },
 ]
 
 
 const faqs = [
-  { question: 'Which board does Triveni Public School follow?', answer: 'Triveni Public School is affiliated with the Council for Indian School Certificate Examination (CISCE), New Delhi. Our school code is KA-214. We offer the ICSE curriculum from Grade I through Grade X.' },
-  { question: 'What grades does the school offer?', answer: 'We offer classes from Pre-Primary (Nursery and KG) through Grade X — covering Pre-Primary, Primary (I–V), Middle (VI–VIII) and Senior School (IX–X).' },
-  { question: 'Is the school located near Hessarghatta Road / Bagalagunte?', answer: 'Yes. We are at No. 28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte, Mallasandra, T. Dasarahalli, Bengaluru – 560073.' },
+  { question: 'Which board does Triveni Balavikas Central School follow?', answer: 'We follow the ICSE curriculum prescribed by the Council for the Indian School Certificate Examinations (CISCE), New Delhi — a structured, balanced and nationally recognised academic framework.' },
+  { question: 'What grades does the school offer?', answer: 'We offer Grade I to Grade VIII — encompassing the Primary section (Grades I to V) and the Middle School section (Grades VI to VIII).' },
+  { question: 'Where is the school located?', answer: 'We are at No. 39/1, Hesaraghatta Main Road, Bagalagunte, Nagasandra Post, Bengaluru – 560073.' },
   { question: 'How do I apply for admission?', answer: 'Visit our <a href="/admissions" class="text-accent underline">Admissions page</a> or fill in the enquiry form. Our team will contact you within 24 hours.' },
-  { question: 'Does the school have a transport / bus facility?', answer: 'Yes, Triveni Public School provides transport across several routes in North Bengaluru. Please contact the school office to confirm coverage for your area.' },
+  { question: 'Does the school have a transport / bus facility?', answer: 'Yes. We offer transport facilities across multiple routes in North Bengaluru. Please contact the school office to check availability and confirm coverage for your area.' },
 ]
 
 const galleryImages = [
   { src: '/images/event-independence-day-aerial-view.jpg', alt: 'Independence Day celebration', wide: true },
   { src: '/images/event-janmashtami-kids-costumes-steps.jpg', alt: 'Janmashtami celebration', wide: false },
   { src: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band', wide: false },
-  { src: '/images/event-sports-day-yuva-kreedotsava-2025.jpg', alt: 'Sports Day 2025', wide: true },
+  { src: '/images/event-sports-day-yuva-kreedotsava-2025.jpg', alt: 'Yuva Kreedotsava 2025 — annual sports day', wide: true },
+  { src: '/images/event-army-officer-felicitation.jpg', alt: 'Army officer felicitated by school management on a national day', wide: true },
+  { src: '/images/event-cisce-taekwondo-trophy.jpg', alt: 'Triveni student with CISCE National Taekwondo Meet 2024 trophy', wide: false },
 ]
 
 const schemaOrg = {
   '@context': 'https://schema.org',
   '@type': 'School',
-  name: 'Triveni Public School',
-  description: 'Co-educational ICSE school in Bagalagunte, Bengaluru affiliated with CISCE (School Code KA-214).',
-  url: 'https://www.trivenipublicschool.in',
-  address: { '@type': 'PostalAddress', streetAddress: 'No.28/29, Nagasandra Post, Hessarghatta Main Road, Bagalagunte', addressLocality: 'Bengaluru', addressRegion: 'Karnataka', postalCode: '560073', addressCountry: 'IN' },
-  foundingDate: '2007',
+  name: 'Triveni Balavikas Central School',
+  description: 'Co-educational ICSE school in Bagalagunte, Bengaluru offering Grades I to VIII. Managed by Triveni Educational Trust.',
+  url: 'https://www.trivenibalavikas.in',
+  address: { '@type': 'PostalAddress', streetAddress: 'No. 39/1, Hesaraghatta Main Road, Bagalagunte, Nagasandra Post', addressLocality: 'Bengaluru', addressRegion: 'Karnataka', postalCode: '560073', addressCountry: 'IN' },
+  parentOrganization: { '@type': 'EducationalOrganization', name: 'Triveni Educational Trust' },
 }
 
 export default function HomePage() {
@@ -63,9 +74,9 @@ export default function HomePage() {
       <section className="py-22">
         <div className="container-main mb-14">
           <div className="text-center">
-            <SectionLabel>Why Triveni Public School</SectionLabel>
+            <SectionLabel>Why Triveni Balavikas Central School</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Premium Pedagogy at Affordable Fees</h2>
-            <p className="text-muted text-[17px] leading-[1.75] max-w-140 mx-auto">Parents across Bagalagunte, Mallasandra and T. Dasarahalli choose us for a reason — quality education at fees that make sense for every family.</p>
+            <p className="text-muted text-[17px] leading-[1.75] max-w-140 mx-auto">Families across North Bengaluru choose us for a reason — quality education at fees that make sense for every family.</p>
           </div>
         </div>
         <div className="px-[clamp(20px,6%,96px)]">
@@ -79,14 +90,23 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <SectionLabel>Academic Programs</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Education for Every Stage of Growth</h2>
-            <p className="text-muted text-[17px] leading-[1.75] max-w-140 mx-auto">From playful early years to focused ICSE preparation — our programs are designed to bring out the best in every child at every stage.</p>
+            <p className="text-muted text-[17px] leading-[1.75] max-w-140 mx-auto">Focused towards the ICSE curriculum, our programmes are designed to bring out the best in every child at every stage — building strong foundations in the Primary years and advancing skills in Middle School.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {programs.map((p, i) => (
               <FadeIn key={p.title} delay={i * 0.1}>
                 <div className="bg-white rounded-md overflow-hidden shadow-sm border border-border hover:-translate-y-1.5 hover:shadow-lg transition-all duration-300 group h-full flex flex-col">
-                  <div className="relative h-50 overflow-hidden shrink-0">
-                    <Image src={p.img} alt={p.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  {/* Cutout PNG sits on a brand-tinted gradient — figure anchored bottom with headroom on top */}
+                  <div className={`relative aspect-5/4 overflow-hidden shrink-0 bg-linear-to-b ${p.bg}`}>
+                    <div className="absolute inset-x-0 top-[12%] bottom-0">
+                      <Image
+                        src={p.img}
+                        alt=""
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-contain object-bottom group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <p className="text-accent text-[12px] font-bold uppercase tracking-widest mb-2">{p.tag}</p>
@@ -152,9 +172,9 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5 mb-8">
                 {[
                   '5E Inquiry-Based Science',
-                  'Remediation Analytics Platform',
-                  'Ethics as a Primary Subject',
-                  'NIE · Times of India Partner',
+                  'Remedial Support Programme',
+                  'Ethics as a Core Subject',
+                  'NIE · Times of India & The Hindu',
                   'Competitive Exam Preparation',
                   'Student-Led Sustainability',
                 ].map(item => (
@@ -182,7 +202,7 @@ export default function HomePage() {
           <div className="text-center mb-14">
             <SectionLabel>Parent Testimonials</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-white mb-4">Trusted by Families Across North Bengaluru</h2>
-            <p className="text-white/60 text-[17px] leading-[1.75] max-w-140 mx-auto">Hear directly from the parents who have entrusted their children to Triveni Public School.</p>
+            <p className="text-white/60 text-[17px] leading-[1.75] max-w-140 mx-auto">Hear directly from the parents who have entrusted their children to Triveni Balavikas Central School.</p>
           </div>
           <TestimonialsMarquee />
         </div>
@@ -195,7 +215,7 @@ export default function HomePage() {
             <div>
               <SectionLabel>School Life</SectionLabel>
               <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-3">Beyond the Classroom</h2>
-              <p className="text-muted text-[17px] max-w-125 leading-[1.75]">Sports days, NCC camps, Janmashtami celebrations, Republic Day marches — life at Triveni is rich, vibrant and memorable.</p>
+              <p className="text-muted text-[17px] max-w-125 leading-[1.75]">Sports Day, Annual Day, national and regional festival celebrations — life at Triveni is rich, vibrant and memorable.</p>
             </div>
             <Link href="/life" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-primary border-2 border-primary rounded-pill px-7 py-3.5 hover:bg-primary hover:text-white transition-all duration-300">
               View All Events <i className="ri-arrow-right-line" />
@@ -216,7 +236,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CTABanner heading="Admissions Open for 2026–27" subtext="Seats are limited. Enquire today to secure your child's place at Triveni Public School." />
+      <CTABanner heading="Admissions Open for 2026–2027" subtext="Seats are limited. Enquire today to secure your child's place at Triveni Balavikas Central School." />
 
       {/* FAQ */}
       <section className="py-22 bg-surface">

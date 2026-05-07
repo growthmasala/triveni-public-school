@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import AboutMegaMenu from '@/components/layout/AboutMegaMenu'
+import { LEADERS } from '@/lib/leaders'
 
 const links = [
   { href: '/',           label: 'Home' },
@@ -12,12 +14,14 @@ const links = [
   { href: '/pedagogy',   label: 'Pedagogy' },
   { href: '/admissions', label: 'Admissions' },
   { href: '/life',       label: 'School Life' },
+  { href: '/careers',    label: 'Careers' },
   { href: '/contact',    label: 'Contact' },
 ]
 
 export default function Navbar() {
   const [scrolled,  setScrolled]  = useState(false)
   const [menuOpen,  setMenuOpen]  = useState(false)
+  const [aboutExpanded, setAboutExpanded] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -27,7 +31,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  useEffect(() => { setMenuOpen(false) }, [pathname])
+  useEffect(() => { setMenuOpen(false); setAboutExpanded(false) }, [pathname])
 
   // Mobile/tablet (<lg): always white bg + dark text regardless of scroll
   // Desktop (lg+): transparent + white text at top, white + dark text when scrolled
@@ -49,7 +53,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Main nav bar ─────────────────────────────── */}
       <nav
         role="navigation"
         aria-label="Main navigation"
@@ -61,7 +64,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <Image
               src="/images/triveni-logo.png"
-              alt="Triveni Public School"
+              alt="Triveni Balavikas Central School"
               width={48}
               height={48}
               sizes="48px"
@@ -69,12 +72,11 @@ export default function Navbar() {
               style={{ width: 48, height: 48 }}
             />
             <div className="flex flex-col leading-tight">
-              <span className={`font-urbanist font-extrabold text-[16px] tracking-tight transition-colors duration-300 ${nameCol}`}>
-                Triveni Public School
+              <span className={`font-urbanist font-extrabold text-[15px] sm:text-[16px] tracking-tight transition-colors duration-300 ${nameCol}`}>
+                Triveni Balavikas Central School
               </span>
-              {/* sub-line only from sm up */}
               <span className={`hidden sm:block font-inter text-[10px] font-medium tracking-wide transition-colors duration-300 ${subCol}`}>
-                ICSE · Est. 2007 · KA-214
+                ICSE · Grades I to VIII
               </span>
             </div>
           </Link>
@@ -83,6 +85,9 @@ export default function Navbar() {
           <ul className="hidden lg:flex items-center gap-4 xl:gap-7">
             {links.map(({ href, label }) => {
               const active = pathname === href
+              if (href === '/about') {
+                return <AboutMegaMenu key={href} active={active} textCol={textCol} />
+              }
               return (
                 <li key={href}>
                   <Link
@@ -101,7 +106,6 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-3 shrink-0">
-            {/* CTA — desktop only */}
             <Link
               href="/admissions"
               className="hidden lg:inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white font-urbanist font-semibold text-[14px] xl:text-[15px] px-5 xl:px-6 py-3 rounded-pill transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
@@ -109,7 +113,6 @@ export default function Navbar() {
               Enquire Now
             </Link>
 
-            {/* Hamburger — mobile & tablet (below lg) */}
             <button
               className="lg:hidden flex flex-col justify-center gap-[5px] w-10 h-10 bg-transparent border-none cursor-pointer"
               onClick={() => setMenuOpen(o => !o)}
@@ -125,10 +128,56 @@ export default function Navbar() {
 
         {/* Mobile / tablet drawer */}
         {menuOpen && (
-          <div className="lg:hidden bg-white border-t border-border shadow-lg">
+          <div className="lg:hidden bg-white border-t border-border shadow-lg max-h-[80vh] overflow-y-auto">
             <div className="container-main py-2">
               {links.map(({ href, label }) => {
                 const active = pathname === href
+
+                if (href === '/about') {
+                  return (
+                    <div key={href} className="border-b border-border">
+                      <div className="flex items-center justify-between">
+                        <Link
+                          href={href}
+                          className={`flex-1 font-urbanist font-semibold text-[15px] py-3.5 transition-colors ${active ? 'text-accent' : 'text-[#1A1A2A] hover:text-accent'}`}
+                        >
+                          {label}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => setAboutExpanded(v => !v)}
+                          aria-label={aboutExpanded ? 'Collapse leadership menu' : 'Expand leadership menu'}
+                          aria-expanded={aboutExpanded}
+                          className="w-10 h-10 flex items-center justify-center text-[#1A1A2A]"
+                        >
+                          <i className={`ri-arrow-down-s-line text-xl transition-transform ${aboutExpanded ? 'rotate-180' : ''}`} />
+                        </button>
+                      </div>
+                      {aboutExpanded && (
+                        <ul className="pb-2 -mt-1">
+                          {LEADERS.map(l => (
+                            <li key={l.id}>
+                              <Link
+                                href={`/about#${l.id}`}
+                                className="flex items-center gap-3 py-2.5 pl-3 pr-2 text-[14px] text-muted hover:text-accent transition-colors"
+                              >
+                                <span className="relative w-9 h-9 rounded-full overflow-hidden bg-primary/10 shrink-0">
+                                  {/* Decorative — name + title appear right next to it */}
+                                  <Image src={l.photo} alt="" fill sizes="36px" className="object-cover object-top" />
+                                </span>
+                                <span className="flex-1 leading-tight">
+                                  <span className="block font-semibold text-[#1A1A2A] text-[13px]">{l.name}</span>
+                                  <span className="block text-[11px]">{l.title}</span>
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )
+                }
+
                 return (
                   <Link
                     key={href}
@@ -149,7 +198,6 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-
     </>
   )
 }
