@@ -28,10 +28,10 @@ export default function VisionMissionTabs() {
   const current = tabs.find(t => t.id === active)!
 
   return (
-    <div className="flex flex-col lg:flex-row items-stretch">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:gap-8">
 
-      {/* Left — white content card, slightly overlapping the image on the right */}
-      <div className="relative z-10 bg-white rounded-xl shadow-xl p-8 lg:p-12 lg:-mr-20 my-0 lg:my-8 flex flex-col justify-center">
+      {/* Left — white content card, side-by-side with the photo (no overlap, fixes doc point #35) */}
+      <div className="relative z-10 bg-white rounded-xl shadow-xl p-8 lg:p-12 my-0 lg:my-8 flex flex-col justify-center flex-1">
 
         {/* Tab buttons */}
         <div className="flex gap-3 flex-wrap mb-8">
@@ -74,19 +74,20 @@ export default function VisionMissionTabs() {
         </AnimatePresence>
       </div>
 
-      {/* Right — chairman photo, face fully visible */}
-      <div className="relative w-full lg:w-[42%] shrink-0 rounded-xl overflow-hidden min-h-85 lg:min-h-130">
+      {/* Right — Secretary photo. Slot uses the photo's natural landscape aspect (~3:2)
+          so the full executive composition fills it edge-to-edge with no letterboxing. */}
+      <div className="relative w-full lg:w-[44%] shrink-0 rounded-xl overflow-hidden aspect-3/2 shadow-xl mt-6 lg:mt-0">
         <Image
-          src="/images/secretary-portrait.jpg"
-          alt="Mr. K. Manjunath, Secretary, Triveni Group of Institutions"
+          src="/images/leadership/secretary-manjunath.jpg"
+          alt=""
           fill
-          sizes="(max-width: 1024px) 100vw, 42vw"
-          className="object-cover object-top"
+          sizes="(max-width: 1024px) 100vw, 44vw"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-primary/80 via-transparent to-transparent" />
-        <div className="absolute bottom-6 left-6">
-          <p className="text-white font-urbanist font-bold text-lg">Mr. K. Manjunath</p>
-          <p className="text-white/70 text-sm">Secretary, Triveni Group of Institutions</p>
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-primary/85 via-primary/30 to-transparent" />
+        <div className="absolute bottom-6 left-6 right-6">
+          <p className="text-white font-urbanist font-bold text-lg">Mr Manjunath K</p>
+          <p className="text-white/80 text-sm">Secretary, Triveni Group of Institutions</p>
         </div>
       </div>
 

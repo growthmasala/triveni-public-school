@@ -7,9 +7,9 @@ import FadeIn from '@/components/ui/FadeIn'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Life at Triveni | Events, Gallery & Activities – Triveni Public School Bengaluru',
-  description: 'Explore life at Triveni Public School — Independence Day, Janmashtami, Sports Day, NCC, Scouts, marching bands, kindergarten graduation and more.',
-  alternates: { canonical: 'https://www.trivenipublicschool.in/life' },
+  title: 'Life at Triveni | Events, Gallery & Activities – Triveni Balavikas Central School',
+  description: 'Explore life at Triveni Balavikas Central School — Independence Day, Janmashtami, Yuva Kreedotsava sports day, marching band, sustainability initiatives and more.',
+  alternates: { canonical: 'https://www.trivenibalavikas.in/life' },
 }
 
 const events = [
@@ -19,21 +19,24 @@ const events = [
 ]
 
 const galleryImages = [
-  { src: '/images/event-republic-day-salute-management.jpg', alt: 'Republic Day management salute', wide: true },
-  { src: '/images/event-janmashtami-students-costumes-crowd.jpg', alt: 'Janmashtami crowd of students in costumes', wide: false },
-  { src: '/images/event-ncc-khaki-tricolor-balloon-arch.jpg', alt: 'NCC students with tricolour balloon arch', wide: false },
-  { src: '/images/campus-exterior-evening-buses.jpg', alt: 'Triveni school campus with buses at evening', wide: true },
-  { src: '/images/event-independence-day-aerial-view.jpg', alt: 'Independence Day aerial view', wide: true },
-  { src: '/images/library-girls-studying.jpg', alt: 'Girls studying in school library', wide: false },
+  { src: '/images/event-independence-day-aerial-view.jpg', alt: 'Independence Day flag hoisting in the school courtyard', wide: true },
+  { src: '/images/event-janmashtami-students-costumes-crowd.jpg', alt: 'Janmashtami students in costumes', wide: false },
+  { src: '/images/event-bharatnatyam-dance.jpg', alt: 'Classical Bharatnatyam dance performance', wide: false },
+  { src: '/images/event-annual-day-stage.jpg', alt: 'Annual Day stage performance with full lighting', wide: true },
+  { src: '/images/library-girls-studying.jpg', alt: 'Students concentrating during chess club', wide: false },
+  { src: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band performance in red blazers', wide: false },
+  { src: '/images/event-yoga-aerial.jpg', alt: 'School-wide yoga session — aerial view', wide: true },
+  { src: '/images/event-field-trip-jatayu.jpg', alt: 'Educational field trip to Jatayu', wide: false },
+  { src: '/images/event-republic-day-salute-management.jpg', alt: 'Republic Day salute by senior students', wide: false },
 ]
 
 const campus = [
-  { icon: 'ri-building-line', title: 'Modern Classrooms', desc: 'Bright, well-ventilated classrooms equipped for interactive learning — from colourful pre-primary rooms to focused senior school halls.' },
-  { icon: 'ri-book-2-line', title: 'Library', desc: 'A well-stocked library where students browse, read, research and develop a love of learning that goes beyond any syllabus.' },
-  { icon: 'ri-computer-line', title: 'Computer Lab', desc: 'Technology skills built from primary school onwards — preparing students for a digital-first world with hands-on computer education.' },
-  { icon: 'ri-football-line', title: 'Sports Facilities', desc: 'Space for sports and physical education — because healthy bodies and healthy minds go together, and every child deserves to play.' },
-  { icon: 'ri-bus-line', title: 'Transport', desc: 'Safe, reliable bus services covering major routes across North Bengaluru — making Triveni accessible for families across the catchment area.' },
-  { icon: 'ri-shield-check-line', title: 'Safety & Security', desc: 'A secure, monitored campus environment where parents can feel confident their child is in safe hands every single day.' },
+  { icon: 'ri-building-line', title: 'Modern Classrooms', desc: 'Bright, spacious and well-ventilated learning environments designed to inspire focus and engagement — thoughtfully structured to support interactive teaching.' },
+  { icon: 'ri-book-2-line', title: 'Library', desc: 'A thoughtfully curated, well-stocked library that invites students to explore, read and research in a calm, inspiring environment — nurturing curiosity and a lifelong love of learning.' },
+  { icon: 'ri-computer-line', title: 'Computer Lab', desc: 'A modern, well-equipped space where students build essential digital skills through hands-on learning — preparing them to thrive in a digital-first world.' },
+  { icon: 'ri-football-line', title: 'Sports Facilities', desc: 'Expansive, well-planned spaces for sports and physical education that promote fitness, discipline and teamwork — because a healthy body fuels a healthy mind.' },
+  { icon: 'ri-bus-line', title: 'Transport', desc: 'A well-organised network covering key routes across North Bengaluru, with GPS tracking, onboard CCTV, trained caretakers and experienced drivers.' },
+  { icon: 'ri-shield-check-line', title: 'Safety & Security', desc: 'A secure, well-monitored campus designed to ensure every child\'s safety and well-being — giving parents complete peace of mind, every single day.' },
 ]
 
 export default function LifePage() {
@@ -48,10 +51,10 @@ export default function LifePage() {
       <section className="py-22">
         <div className="container-main">
           <SplitSection
-            imageSrc="/images/event-kindergarten-graduation-blue-gowns.jpg"
-            imageAlt="Kindergarten graduation ceremony — students in blue gowns"
-            imageBadge="Kindergarten Graduation 2024"
-            imageBadgeIcon="ri-graduation-cap-line"
+            imageSrc="/images/event-marching-band-girls-red.jpg"
+            imageAlt="Triveni marching band performing in red uniforms"
+            imageBadge="Performing Arts · Marching Band"
+            imageBadgeIcon="ri-music-2-line"
           >
             <FadeIn direction="right">
               <SectionLabel>A Day at Triveni</SectionLabel>
@@ -59,7 +62,7 @@ export default function LifePage() {
               <p className="text-muted leading-[1.8] mb-4">From morning assembly to the final bell, life at Triveni is energetic, purposeful and joyful. Our students are not just academic achievers — they are confident performers, team players and critical thinkers.</p>
               <p className="text-muted leading-[1.8] mb-6">We deliberately balance classroom rigour with rich co-curricular experiences — because the memories children carry from school are not always about chapters learned, but about friendships made and challenges overcome.</p>
               <div className="grid grid-cols-2 gap-4">
-                {[['15+', 'Annual Events'], ['5+', 'Active Clubs'], ['NCC', '& Scouts'], ['TOI', 'NIE Partner']].map(([val, label]) => (
+                {[['CCA', 'Holistic Development'], ['5+', 'Active Clubs'], ['Sports', 'Indoor & Outdoor'], ['NIE', 'TOI & The Hindu']].map(([val, label]) => (
                   <div key={label} className="bg-surface rounded-md p-5 text-center">
                     <div className="font-urbanist font-black text-accent text-3xl">{val}</div>
                     <div className="text-muted text-[13px] font-medium uppercase tracking-[0.06em] mt-1">{label}</div>
@@ -76,8 +79,9 @@ export default function LifePage() {
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>School Events</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Celebrations That Build Community</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Each event at Triveni is an opportunity for students to grow — in confidence, in character and in their sense of belonging.</p>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-2">Celebrations That Build Community</h2>
+            <p className="text-accent font-urbanist font-semibold text-[15px] tracking-wide mb-4">Where every moment becomes a milestone</p>
+            <p className="text-muted text-[17px] max-w-160 mx-auto leading-[1.75]">At Triveni, every celebration is a meaningful experience — designed to nurture confidence, strengthen character, and deepen each student&apos;s sense of belonging within a vibrant school community.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             {events.map((e, i) => (
@@ -97,8 +101,8 @@ export default function LifePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { img: '/images/event-kindergarten-graduation-blue-gowns.jpg', alt: 'Kindergarten graduation', badge: 'Milestones', title: 'Kindergarten Graduation Ceremony', desc: 'Our youngest graduates celebrate the completion of Pre-Primary with a formal graduation — capped gowns and all. A day families cherish forever.' },
-              { img: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band in red uniforms', badge: 'Performing Arts', title: 'Marching Band & Performing Arts', desc: 'Our marching band performs at national events and school functions, building precision, discipline and teamwork — a proud tradition students look forward to joining.' },
+              { img: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band in red uniforms', badge: 'Performing Arts', title: 'Marching Band & Performing Arts', desc: 'A proud and vibrant tradition at Triveni — our marching band and performing arts programmes showcase precision, rhythm and coordinated excellence. Guided by a dedicated band instructor, students receive structured training that builds discipline, teamwork and confidence.' },
+              { img: '/images/event-republic-day-salute-management.jpg', alt: 'Republic Day salute and ceremony', badge: 'Patriotic Celebrations', title: 'National Days & Ceremonies', desc: 'Spectacular patriotic celebrations bring the spirit of the nation to life — disciplined formations, ceremonial flag hoisting and inspiring salutes that foster pride, unity and a deep sense of national identity.' },
             ].map((e, i) => (
               <FadeIn key={e.title} delay={i * 0.1}>
                 <div className="bg-white rounded-md overflow-hidden shadow-sm border border-border h-full">
@@ -117,68 +121,34 @@ export default function LifePage() {
         </div>
       </section>
 
-      {/* NCC & Scouts */}
-      <section className="py-22">
-        <div className="container-main">
-          <div className="text-center mb-14">
-            <SectionLabel>Discipline &amp; Service</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">NCC &amp; Scouts — Building Tomorrow&apos;s Leaders</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">National Cadet Corps and Scouts &amp; Guides are among the most character-building programmes a school can offer.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            {[
-              { img: '/images/event-ncc-flag-jai-jawan-unity-diversity.jpg', alt: 'NCC students with Jai Jawan unity flag', title: 'National Cadet Corps (NCC)', desc: 'NCC at Triveni trains students in discipline, leadership, physical fitness and service to the nation — developing responsibility, punctuality and national pride that shapes them for life.' },
-              { img: '/images/event-scouts-march-colourful-flags.jpg', alt: 'Scouts marching with colourful flags', title: 'Scouts & Guides', desc: 'Our Scouts and Guides programme develops teamwork, community service, outdoor skills and the spirit of "Be Prepared." Students participate in local and regional events, building lifelong leadership skills.' },
-            ].map(({ img, alt, title, desc }) => (
-              <div key={title}>
-                <div className="relative rounded-lg overflow-hidden mb-4 h-[300px]">
-                  <Image src={img} alt={alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
-                </div>
-                <h3 className="font-urbanist font-extrabold text-2xl text-[#1A1A2A] mb-3">{title}</h3>
-                <p className="text-muted leading-[1.8]">{desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-4">
-            {['/images/event-ncc-students-purple-balloon-arch.jpg', '/images/event-scouts-blue-tricolor-balloon-arch.jpg', '/images/event-scouts-guides-pennants-balloon-arch.jpg'].map((src, i) => (
-              <FadeIn key={src} delay={i * 0.1}>
-                <div className="relative rounded-md overflow-hidden h-[180px]">
-                  <Image src={src} alt="NCC and Scouts activities" fill sizes="33vw" className="object-cover" />
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Sustainability — Waste-Paper Recycling */}
       <section className="py-22 bg-surface">
         <div className="container-main">
           <SplitSection
-            imageSrc="/images/campus-exterior-evening-angle2.jpg"
-            imageAlt="Triveni Public School campus — sustainability in action"
-            imageBadge="Student-Led Initiative · Grades IX & X"
+            imageSrc="/images/sustainability-recycling-hands.jpg"
+            imageAlt=""
+            imageBadge="Student-Led Initiative"
             imageBadgeIcon="ri-recycle-line"
             reverse
           >
             <FadeIn direction="left">
               <SectionLabel>Sustainability in Action</SectionLabel>
-              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Our Students Recycle — Not as a Project, but as a Practice</h2>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Recycling as a Practice, Not Just a Project</h2>
               <blockquote className="border-l-4 border-accent pl-5 italic text-body text-[16px] leading-[1.75] mb-5">
-                &ldquo;Recycling is very important, as waste has a huge negative impact on the natural environment.&rdquo;
+                &ldquo;Recycling is essential, as waste has a profound impact on our environment.&rdquo;
               </blockquote>
               <p className="text-muted leading-[1.8] mb-4">
-                Students of Grades IX and X at Triveni lead our <strong className="text-body">Waste-Paper Recycling Project</strong> — a live, ongoing sustainability initiative where senior students take real ownership of an environmental challenge within the school campus.
+                At Triveni, sustainability is lived — not just taught. Our <strong className="text-body">Waste-Paper Recycling Project</strong> is a continuous, student-led effort where learners take meaningful ownership of an environmental responsibility within the school campus.
               </p>
               <p className="text-muted leading-[1.8] mb-6">
-                This is not a classroom exercise. Students collect, process and recycle waste paper generated over time — understanding firsthand how waste affects ecosystems and why responsible action matters for every generation.
+                This is far more than a classroom activity. Students actively collect, process and recycle paper waste — gaining firsthand insight into environmental impact and the importance of responsible action in everyday life.
               </p>
               <div className="flex flex-col gap-3">
                 {[
-                  'Led entirely by Grade IX and X students',
-                  'Addresses real environmental impact of paper waste',
-                  'Builds ownership, accountability and environmental empathy',
-                  'Part of our broader commitment to education for life',
+                  'Led by students, fostering ownership and initiative',
+                  'Addresses the real environmental impact of paper waste',
+                  'Builds accountability, awareness and environmental empathy',
+                  'Reflects our commitment to education that extends beyond the classroom',
                 ].map(item => (
                   <div key={item} className="flex items-start gap-3 text-[15px] text-body">
                     <i className="ri-check-double-line text-accent text-lg mt-0.5 shrink-0" />
@@ -197,7 +167,7 @@ export default function LifePage() {
           <div className="text-center mb-14">
             <SectionLabel>Photo Gallery</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">See Triveni in Action</h2>
-            <p className="text-muted text-[17px] max-w-[500px] mx-auto leading-[1.75]">Real moments from our campus — no stock photos, just Triveni life as it is.</p>
+            <p className="text-muted text-[17px] max-w-[500px] mx-auto leading-[1.75]">Step into real moments from our campus — captured as they happen. No stock images, just authentic glimpses of Triveni life.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {galleryImages.map(({ src, alt, wide }) => (
@@ -219,7 +189,7 @@ export default function LifePage() {
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Our Campus</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A]">A Campus Built for Learning &amp; Growth</h2>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A]">Our Campus — Designed for Learning. Built for Growth.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {campus.map((c, i) => (

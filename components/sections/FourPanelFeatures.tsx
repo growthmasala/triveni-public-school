@@ -1,11 +1,5 @@
-'use client'
-
 import Image from 'next/image'
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
 
-// Column-first order matching reference: 01 top-left, 02 bottom-left, 03 top-right, 04 bottom-right
-// In a 2-col grid (row-first by default) we use CSS order to achieve column-first visually
 const panels = [
   {
     n: '01.',
@@ -21,7 +15,7 @@ const panels = [
   {
     n: '02.',
     title: 'Whole-Child Development',
-    desc: "Ethics as a primary subject, literary clubs, NCC, Scouts — every dimension of a child's personality gets dedicated attention and nurturing.",
+    desc: "Ethics as a primary subject, literary and other clubs — every dimension of a child's personality gets dedicated attention and nurturing.",
     bg: 'bg-[#E8EAF4]',
     numCol: 'text-primary/10',
     titleCol: 'text-[#1A1A2A]',
@@ -53,71 +47,45 @@ const panels = [
   },
 ]
 
-function ArcRing({ inView }: { inView: boolean }) {
-  const size = 400
-  const cx = size / 2
-  const cy = size / 2
+const r1 = 178, c1 = 2 * Math.PI * r1, arc1 = c1 * 0.70
+const r2 = 158, c2 = 2 * Math.PI * r2, arc2 = c2 * 0.40
+const CX = 200, CY = 200
 
-  // Outer arc — clockwise, longer, slower
-  const r1 = 178
-  const c1 = 2 * Math.PI * r1
-  const arc1 = c1 * 0.70   // 70% arc visible
-
-  // Inner arc — counter-clockwise, shorter, faster
-  const r2 = 158
-  const c2 = 2 * Math.PI * r2
-  const arc2 = c2 * 0.40   // 40% arc visible
-
+// Pure CSS arcs — zero Framer Motion, zero JS hydration cost
+function ArcRing() {
   return (
     <svg
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
+      width="400" height="400" viewBox="0 0 400 400"
       className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
       aria-hidden="true"
     >
-      {/* Outer arc — clockwise continuous rotation */}
-      <motion.circle
-        cx={cx} cy={cy} r={r1}
-        fill="none"
-        stroke="#EC7E34"
-        strokeWidth="10"
-        strokeLinecap="round"
+      {/* Outer arc — CSS clockwise */}
+      <circle
+        cx={CX} cy={CY} r={r1}
+        fill="none" stroke="#EC7E34" strokeWidth="10" strokeLinecap="round"
         strokeDasharray={`${arc1} ${c1 - arc1}`}
-        initial={{ rotate: 0, opacity: 0 }}
-        animate={inView ? { rotate: 360, opacity: 1 } : { rotate: 0, opacity: 0 }}
-        transition={inView ? {
-          rotate: { duration: 14, repeat: Infinity, ease: 'linear' },
-          opacity: { duration: 0.6, delay: 0.1 },
-        } : { opacity: { duration: 0.3 } }}
-        style={{ transformOrigin: `${cx}px ${cy}px` }}
+        style={{
+          transformOrigin: `${CX}px ${CY}px`,
+          animation: 'spin-cw 14s linear infinite',
+        }}
       />
-      {/* Inner arc — counter-clockwise, faster */}
-      <motion.circle
-        cx={cx} cy={cy} r={r2}
-        fill="none"
-        stroke="#EC7E34"
-        strokeWidth="5"
-        strokeLinecap="round"
+      {/* Inner arc — CSS counter-clockwise */}
+      <circle
+        cx={CX} cy={CY} r={r2}
+        fill="none" stroke="#EC7E34" strokeWidth="5" strokeLinecap="round"
         strokeDasharray={`${arc2} ${c2 - arc2}`}
-        initial={{ rotate: 0, opacity: 0 }}
-        animate={inView ? { rotate: -360, opacity: 1 } : { rotate: 0, opacity: 0 }}
-        transition={inView ? {
-          rotate: { duration: 9, repeat: Infinity, ease: 'linear' },
-          opacity: { duration: 0.6, delay: 0.3 },
-        } : { opacity: { duration: 0.3 } }}
-        style={{ transformOrigin: `${cx}px ${cy}px` }}
+        style={{
+          transformOrigin: `${CX}px ${CY}px`,
+          animation: 'spin-ccw 9s linear infinite',
+        }}
       />
     </svg>
   )
 }
 
 export default function FourPanelFeatures() {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-60px' })
-
   return (
-    <div ref={ref} className="relative grid grid-cols-1 lg:grid-cols-2 gap-0">
+    <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0">
 
       {panels.map((p) => (
         <div
@@ -139,13 +107,13 @@ export default function FourPanelFeatures() {
         </div>
       ))}
 
-      {/* Center circle + arc — desktop only */}
+      {/* Center circle + CSS arcs — desktop only */}
       <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-        <ArcRing inView={inView} />
+        <ArcRing />
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72.5 h-72.5 rounded-full overflow-hidden shadow-2xl">
           <Image
             src="/images/classroom-nie-newspaper-times-of-india.jpg"
-            alt="Students actively learning at Triveni Public School"
+            alt="Students actively learning at Triveni Balavikas Central School"
             fill
             sizes="290px"
             className="object-cover"

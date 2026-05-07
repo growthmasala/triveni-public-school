@@ -6,18 +6,25 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { DefaultChatTransport } from 'ai'
 import type { UIMessage } from 'ai'
 
+// Shown before any conversation starts
 const QUICK_REPLIES = [
-  { label: '🎓 Admissions Process', text: 'How do I apply for admission?' },
-  { label: '📚 Programs & Grades', text: 'What grades and programs does the school offer?' },
-  { label: '🚌 Transport Routes', text: 'Does the school have bus transport?' },
-  { label: '📞 Contact & Hours', text: 'What are the school office hours and contact details?' },
-  { label: '💰 Fee Structure', text: 'What are the school fees?' },
-  { label: '🔬 Teaching Methods', text: "What makes Triveni's teaching approach different?" },
+  { label: '🎓 Admissions',    text: 'How do I get my child admitted to Triveni?' },
+  { label: '📚 Grades Offered', text: 'What grades and programs does the school offer?' },
+  { label: '🚌 Transport',     text: 'Does the school have bus transport near my area?' },
+  { label: '🔬 Teaching Style', text: "What makes Triveni's teaching approach different?" },
+  { label: '💰 Fee Structure',  text: 'Can you tell me about the fee structure?' },
+  { label: '📅 School Timings', text: 'What are the school timings and office hours?' },
 ]
 
-const WELCOME = `Hi there! 👋 I'm **Vidya**, your Triveni Public School assistant. I can help you with admissions, programs, fees, transport and more.
+// Shown after each bot reply — keeps the conversation going
+const FOLLOWUP_REPLIES = [
+  { label: '🎓 Admissions',    text: 'How do I get my child admitted?' },
+  { label: '🚌 Transport',     text: 'Which areas does the school bus cover?' },
+  { label: '🔬 Teaching',      text: 'How is the teaching different from other schools?' },
+  { label: '📞 Contact',       text: 'How can I reach the school office?' },
+]
 
-What would you like to know?`
+const WELCOME = `Hi! 👋 I'm **Vidya**, the assistant for Triveni Balavikas Central School. Ask me anything about admissions, programs, transport, or what makes the school special.`
 
 function ChatIcon({ size = 28 }: { size?: number }) {
   return (
@@ -67,14 +74,18 @@ function isTouchDevice(): boolean {
 export default function SchoolChatbot() {
   const [open, setOpen] = useState(false)
   const [inputValue, setInputValue] = useState('')
-  const [quickRepliesUsed, setQuickRepliesUsed] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const { messages, sendMessage, status } = useChat({
+  const { messages, sendMessage, status, error } = useChat({
     transport: new DefaultChatTransport({ api: '/api/chat' }),
   })
   const isLoading = status === 'submitted' || status === 'streaming'
+
+  // Derived state for quick reply visibility
+  const lastMessage = messages[messages.length - 1]
+  const showInitialChips = messages.length === 0
+  const showFollowupChips = lastMessage?.role === 'assistant' && !isLoading
 
   // Auto-focus only on desktop — on mobile, keyboard popup on open is bad UX
   useEffect(() => {
@@ -97,11 +108,8 @@ export default function SchoolChatbot() {
   }
 
   const handleQuickReply = (text: string) => {
-    setQuickRepliesUsed(true)
     sendMessage({ text })
   }
-
-  const showQuickReplies = messages.length === 0 && !quickRepliesUsed
 
   return (
     <>
@@ -172,8 +180,8 @@ export default function SchoolChatbot() {
                 </div>
               </div>
 
-              {/* Quick reply chips */}
-              {showQuickReplies && (
+              {/* Quick reply chips — initial (before conversation) */}
+              {showInitialChips && (
                 <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -237,6 +245,41 @@ export default function SchoolChatbot() {
                 </div>
               )}
 
+              {/* Follow-up chips — appear after each bot reply */}
+              {showFollowupChips && (
+                <motion.div
+                  key={lastMessage?.id}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.35 }}
+                  className="flex flex-wrap gap-2 pl-10"
+                >
+                  {FOLLOWUP_REPLIES.map(qr => (
+                    <button
+                      key={qr.text}
+                      onClick={() => handleQuickReply(qr.text)}
+                      style={{ touchAction: 'manipulation' }}
+                      className="text-[11px] font-medium bg-white border border-border text-primary px-3 py-1.5 rounded-pill hover:bg-primary hover:text-white hover:border-primary transition-all duration-200 cursor-pointer"
+                    >
+                      {qr.label}
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+
+              {/* Error state — shown when API call fails */}
+              {error && (
+                <div className="flex items-start gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center shrink-0 text-red-500 text-sm font-bold">
+                    !
+                  </div>
+                  <div className="bg-red-50 border border-red-200 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-red-700 max-w-[80%] leading-[1.6]">
+                    Something went wrong. Please try again, or reach us at{' '}
+                    <strong>080 2839 7648</strong>
+                  </div>
+                </div>
+              )}
+
               <div ref={bottomRef} />
             </div>
 
@@ -250,6 +293,7 @@ export default function SchoolChatbot() {
                   onKeyDown={e => e.key === 'Enter' && !e.shiftKey && handleSend()}
                   placeholder="Ask me anything about Triveni..."
                   disabled={isLoading}
+                  maxLength={500}
                   inputMode="text"
                   // fontSize 16px prevents iOS Safari from auto-zooming the page
                   style={{ fontSize: '16px', touchAction: 'manipulation' }}
@@ -267,7 +311,7 @@ export default function SchoolChatbot() {
                 </button>
               </form>
               <a
-                href="https://wa.me/918023721148"
+                href="https://wa.me/919740701861"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1.5 mt-2 text-[11px] text-muted hover:text-[#25D366] transition-colors py-1"

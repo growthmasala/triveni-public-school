@@ -2,68 +2,64 @@ import type { Metadata } from 'next'
 import PageHero from '@/components/sections/PageHero'
 import CTABanner from '@/components/sections/CTABanner'
 import SplitSection from '@/components/sections/SplitSection'
+import PedagogyProgrammes, { type Programme } from '@/components/sections/PedagogyProgrammes'
 import SectionLabel from '@/components/ui/SectionLabel'
 import FadeIn from '@/components/ui/FadeIn'
 import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
-  title: 'Our Pedagogy | How We Teach – Triveni Public School Bengaluru',
-  description: 'Discover how Triveni Public School teaches — 5E Inquiry Science, Remediation Analytics, Ethics as a subject, NIE Times of India partnership, and more. ICSE school Bagalagunte.',
-  alternates: { canonical: 'https://www.trivenipublicschool.in/pedagogy' },
+  title: 'Our Pedagogy | How We Teach – Triveni Balavikas Central School',
+  description: 'Discover how Triveni Balavikas Central School teaches — 5E Inquiry Science, Remedial Support, Ethics as a core subject, NIE partnership with The Times of India and The Hindu, and more.',
+  alternates: { canonical: 'https://www.trivenibalavikas.in/pedagogy' },
 }
 
-const programs = [
+const programs: Programme[] = [
   {
     icon: 'ri-microscope-line',
     tag: '01',
     title: '5E Inquiry-Based Science',
-    summary: 'From rote to real understanding — science the way scientists actually think.',
-    detail: 'Our science teaching is built on the globally proven 5E model: Engage, Explore, Explain, Elaborate and Evaluate. Students do not memorise facts — they discover principles through hands-on experimentation and guided inquiry. This builds genuine conceptual understanding, problem-solving ability and a lasting love of science.',
+    summary: 'Science the way scientists actually think.',
+    detail: 'Built on the globally proven 5E model — Engage, Explore, Explain, Elaborate, Evaluate. Students discover principles through hands-on inquiry, not memorisation.',
     points: [
-      'Students Engage with a real question or phenomenon first',
-      'They Explore through hands-on activity and experimentation',
-      'Then Explain their findings using scientific vocabulary',
-      'Elaborate by connecting to new contexts and applications',
-      'Finally Evaluate their own understanding and progress',
+      'Engage, Explore, Explain — every concept, every class',
+      'Hands-on experimentation builds genuine understanding',
+      'Students learn how to think scientifically, not just answer questions',
     ],
   },
   {
     icon: 'ri-bar-chart-grouped-line',
     tag: '02',
-    title: 'Remediation Analytics Platform',
-    summary: 'Data-driven learning that finds every gap — and closes it.',
-    detail: 'Our Remediation Analytics platform is an interactive, data-driven self-learning tool designed to identify the specific learning gaps of individual students. Rather than one-size-fits-all revision, this system delivers targeted, personalised remediation — so every child progresses at their own pace without being left behind.',
+    title: 'Remedial Support Programme',
+    summary: 'Finds every gap — and closes it.',
+    detail: 'A structured after-school programme (3:15–4:00 p.m.) that pinpoints individual learning gaps and closes them — one student at a time.',
     points: [
-      'Identifies individual learning gaps, not class-wide assumptions',
-      'Delivers personalised study paths for each student',
-      'Bridges the gap between classroom teaching and board exam readiness',
-      'Used intensively in Grades IX and X for ICSE preparation',
+      'Identifies individual gaps, not class-wide assumptions',
+      'Personalised guidance, not generic revision',
+      'Bridges classroom instruction and exam readiness',
     ],
   },
   {
     icon: 'ri-scales-line',
     tag: '03',
-    title: 'Ethics as a Primary Subject',
-    summary: 'Character formation is not an afterthought — it is on the timetable.',
-    detail: 'At Triveni, Ethics is taught as a formal subject with dedicated resource materials — not a values poster on the wall or a line in the school brochure. We believe the right code of conduct and essential values are vital for developing eminent personality traits. Structured sessions systematically build moral character, empathy and civic responsibility in every student.',
+    title: 'Ethics as a Core Subject',
+    summary: 'Character formation is on the timetable, not a poster on the wall.',
+    detail: 'A formal subject with dedicated resource materials. Structured sessions systematically build moral character, integrity and civic responsibility.',
     points: [
-      'Dedicated resource materials — not informal or incidental',
-      'Systematic moral development, not one-off assemblies',
+      'Dedicated resource materials and structured sessions',
+      'Continuous development, not one-off interventions',
       'Builds empathy, integrity and civic responsibility',
-      'Integrated with the school\'s broader character-first philosophy',
     ],
   },
   {
     icon: 'ri-newspaper-line',
     tag: '04',
     title: 'Newspaper in Education (NIE)',
-    summary: 'The real world enters the classroom through The Times of India.',
-    detail: 'Triveni is an official partner of the Times of India Newspaper in Education (NIE) programme. Students are actively involved in real-world journalism exposure — participating in NIE Play Fest, NIE Fun Fest, seminars, workshops and quiz competitions. This builds critical reading, current awareness, analytical thinking and communication skills that no textbook can replicate.',
+    summary: 'The real world enters the classroom through The Times of India and The Hindu.',
+    detail: 'An official partnership with The Times of India and The Hindu. Students participate in NIE Play Fest, Fun Fest, seminars and quiz competitions — building skills no textbook can replicate.',
     points: [
-      'Official partnership with Times of India NIE',
-      'NIE Play Fest and Fun Fest participation',
-      'Seminars, workshops and journalism-skills sessions',
-      'Quiz competitions and inter-school events',
+      'Official partner of two leading national dailies',
+      'Play Fest, Fun Fest, workshops and inter-school quizzes',
+      'Builds critical reading, analytical thinking and communication',
     ],
   },
   {
@@ -71,25 +67,23 @@ const programs = [
     tag: '05',
     title: 'Competitive Exam Preparation',
     summary: 'Beyond the syllabus — preparing students for the world.',
-    detail: 'A series of structured classroom sessions keeps students abreast of current affairs and prepares them for national and international-level competitive examinations. Students learn to think quickly, reason broadly and engage with topics that go well beyond the ICSE syllabus — building the kind of awareness that sets them apart at the next stage.',
+    detail: 'Structured current-affairs sessions integrated into the weekly timetable, preparing students for national and international competitive examinations.',
     points: [
-      'Regular current affairs sessions integrated into the timetable',
-      'Preparation for national and international competitive exams',
-      'Develops reasoning, analytical speed and general awareness',
-      'Particularly focused in Middle and Senior School years',
+      'Current affairs woven into the regular schedule',
+      'Preparation for national and international exams',
+      'Special emphasis through Middle School',
     ],
   },
   {
     icon: 'ri-recycle-line',
     tag: '06',
     title: 'Sustainability in Action',
-    summary: 'Senior students take real ownership of a real environmental challenge.',
-    detail: 'Students of Grades IX and X lead our Waste-Paper Recycling Project — a live, ongoing sustainability initiative where they collect, process and recycle waste paper generated on campus. This is not a classroom simulation. Students engage with a real environmental problem and take responsibility for solving it, developing ownership, accountability and environmental empathy.',
+    summary: 'Real ownership of a real environmental challenge.',
+    detail: 'Students lead our Waste-Paper Recycling Project — a live, ongoing initiative where they collect, process and recycle paper waste generated on campus. Not a simulation, a real responsibility.',
     points: [
-      'Led entirely by Grade IX and X students',
-      'Live initiative — not a theoretical project',
-      'Addresses real environmental impact of paper waste',
-      'Builds leadership, accountability and environmental responsibility',
+      'Student-led, hands-on, ongoing',
+      'Tackles a real environmental impact',
+      'Builds leadership and accountability',
     ],
   },
 ]
@@ -98,7 +92,7 @@ export default function PedagogyPage() {
   return (
     <>
       <PageHero
-        title="How We Teach"
+        title="Our Approach to Teaching"
         description="Triveni's pedagogy goes far beyond the textbook. Every programme listed here is running in our classrooms today — not aspirational, but actual."
         badge="Our Pedagogy"
       />
@@ -107,10 +101,10 @@ export default function PedagogyPage() {
       <section className="py-22">
         <div className="container-main">
           <SplitSection
-            imageSrc="/images/classroom-nie-newspaper-times-of-india.jpg"
-            imageAlt="Students engaged in NIE activity with Times of India newspapers"
-            imageBadge="NIE Partner: Times of India"
-            imageBadgeIcon="ri-newspaper-line"
+            imageSrc="/images/pedagogy-math-spectra.jpg"
+            imageAlt=""
+            imageBadge="Math Spectra · Applied Learning"
+            imageBadgeIcon="ri-pencil-ruler-2-line"
           >
             <FadeIn direction="right">
               <SectionLabel>The Triveni Difference</SectionLabel>
@@ -138,35 +132,11 @@ export default function PedagogyPage() {
           <div className="text-center mb-14">
             <SectionLabel>Six Programmes</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">What Makes Our Teaching Different</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Each programme below is confirmed, running and specific to Triveni Public School — not generic claims found on every school website.</p>
+            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Each programme below is confirmed, running and specific to Triveni Balavikas Central School — not generic claims found on every school website.</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {programs.map((p, i) => (
-              <FadeIn key={p.tag} delay={(i % 2) * 0.1}>
-                <div className="bg-white rounded-lg p-9 shadow-sm border border-border hover:shadow-md hover:border-accent transition-all duration-300 h-full flex flex-col">
-                  <div className="flex items-start gap-4 mb-5">
-                    <div className="w-14 h-14 bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl shrink-0">
-                      <i className={p.icon} />
-                    </div>
-                    <div>
-                      <p className="text-accent text-[12px] font-bold uppercase tracking-[0.1em] mb-1">{p.tag}</p>
-                      <h3 className="font-urbanist font-extrabold text-xl text-[#1A1A2A] leading-tight">{p.title}</h3>
-                    </div>
-                  </div>
-                  <p className="font-urbanist font-semibold text-[15px] text-primary mb-3">{p.summary}</p>
-                  <p className="text-muted text-sm leading-[1.75] mb-5">{p.detail}</p>
-                  <ul className="flex flex-col gap-2.5 mt-auto">
-                    {p.points.map(pt => (
-                      <li key={pt} className="flex items-start gap-2.5 text-sm text-body">
-                        <i className="ri-check-double-line text-accent text-base shrink-0 mt-0.5" />
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn>
+            <PedagogyProgrammes programmes={programs} />
+          </FadeIn>
         </div>
       </section>
 
@@ -206,7 +176,7 @@ export default function PedagogyPage() {
       </section>
 
       <CTABanner
-        heading="See Our Pedagogy in Person"
+        heading="Experience Our Pedagogy Firsthand"
         subtext="Schedule a campus visit and see how Triveni's programmes work in real classrooms — not just on a webpage."
         primaryLabel="Enquire for Admission"
         primaryHref="/admissions#enquiry-form"

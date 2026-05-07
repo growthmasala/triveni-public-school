@@ -7,43 +7,40 @@ import FadeIn from '@/components/ui/FadeIn'
 import AdmissionsForm from '@/components/sections/AdmissionsForm'
 
 export const metadata: Metadata = {
-  title: 'Admissions 2026–27 | Triveni Public School – ICSE School Bagalagunte Bengaluru',
-  description: 'Apply for admission to Triveni Public School (ICSE, KA-214) in Bagalagunte, Bengaluru. Step-by-step process, age criteria, documents required. Admissions open for 2026–27.',
-  alternates: { canonical: 'https://www.trivenipublicschool.in/admissions' },
+  title: 'Admissions 2026–2027 | Triveni Balavikas Central School – ICSE Bagalagunte',
+  description: 'Apply for admission to Triveni Balavikas Central School in Bagalagunte, Bengaluru. ICSE curriculum, Grades I to VIII. Step-by-step process, age criteria, documents required.',
+  alternates: { canonical: 'https://www.trivenibalavikas.in/admissions' },
 }
 
 const steps = [
-  { n: '1', title: 'Enquire', desc: 'Fill in our enquiry form or call / WhatsApp our admissions office. Tell us your child\'s name, age and preferred grade.' },
-  { n: '2', title: 'Visit the School', desc: 'Schedule a visit to our campus on Hessarghatta Main Road. Meet our team, see the classrooms, and get all your questions answered.' },
-  { n: '3', title: 'Submit Documents', desc: 'Submit the required documents with the completed application form. Our team will verify and confirm receipt promptly.' },
-  { n: '4', title: 'Confirmation & Fees', desc: 'Once documents are verified, confirm your child\'s seat by paying the admission fee. Welcome to the Triveni family!' },
+  { n: '1', title: 'Enquire', desc: 'Fill in our enquiry form or call / WhatsApp our admissions office. Share your child\'s name, age and preferred grade.' },
+  { n: '2', title: 'Visit the School', desc: 'Schedule a campus visit on Hesaraghatta Main Road. Meet our team, see classrooms in action and get personalised answers to all your questions.' },
+  { n: '3', title: 'Submit Documents', desc: 'Submit the required documents with the completed application form. Our team will promptly review, verify and acknowledge your submission.' },
+  { n: '4', title: 'Confirmation & Fees', desc: 'Once documents are verified, secure your child\'s admission by completing the fee payment. Welcome to the Triveni family!' },
 ]
 
 const ageCriteria = [
-  { cls: 'Nursery', age: '2.5 – 3.5 years' },
-  { cls: 'LKG',    age: '3.5 – 4.5 years' },
-  { cls: 'UKG',    age: '4.5 – 5.5 years' },
-  { cls: 'Grade I', age: '5.5 – 6.5 years' },
-  { cls: 'Grade II+', age: 'As per CISCE norms' },
+  { cls: 'Grade I',  age: '6 years' },
+  { cls: 'Grade II – VIII', age: 'As per ICSE curriculum norms' },
 ]
 
 const documents = [
   'Birth Certificate (original + photocopy)',
-  'Aadhaar Card — child and parent',
-  '4 recent passport-size photographs',
-  'Transfer Certificate from previous school (Grade II+)',
+  'Aadhaar Card — child and both parents',
+  '4 recent passport-size photographs of the student',
+  'Transfer Certificate from previous school (Grade I+)',
   'Latest Report Card / Progress Report',
   'Proof of residence (utility bill / rental agreement)',
   'Caste / category certificate (if applicable)',
 ]
 
 const faqs = [
-  { question: 'Is there an entrance test for admission?', answer: 'For most grades, admission is based on document verification and an informal interaction. For higher grades (VI+), there may be an informal assessment. Please contact the school to confirm for the specific grade.' },
-  { question: 'Do you offer mid-year admissions?', answer: 'Mid-year admissions are considered on a case-by-case basis depending on seat availability. Please contact our admissions office for the current seat status.' },
-  { question: 'What is the fee structure at Triveni Public School?', answer: 'Triveni is known for offering quality ICSE education at fees significantly more affordable than premium competitors. For the current fee structure, please contact our admissions office directly.' },
-  { question: 'Is transport available from my area?', answer: 'Triveni Public School operates transport routes across several areas in North Bengaluru. Call or WhatsApp us with your locality and we will confirm availability.' },
-  { question: 'Does the school have CCTV and safety measures?', answer: 'Yes, student safety is a priority at Triveni. Please visit the school during your campus tour to get a full overview of our safety infrastructure.' },
-  { question: 'Does Triveni have a parent communication app?', answer: 'Yes. Triveni uses the SchoolCanvas platform — an Android parent app on Google Play — for real-time school-parent communication. You\'ll receive access upon enrolment.' },
+  { question: 'Is there an entrance test for admission?', answer: 'For most grades, admission is based on document verification and an informal interaction. For higher grades, there may be an informal assessment. Please contact the school to confirm for the specific grade.' },
+  { question: 'Do you offer mid-year admissions?', answer: 'Yes — mid-year admissions are considered based on seat availability. Each request is reviewed individually to ensure the best fit for the student. Contact our admissions office for the latest seat status and personalised guidance.' },
+  { question: 'What is the fee structure at Triveni Balavikas Central School?', answer: 'We are committed to making high-quality education accessible, offering excellent academic standards at a fee structure that is fair and thoughtfully designed for families. For detailed and up-to-date information, please connect with our admissions office.' },
+  { question: 'Is transport available from my area?', answer: 'We offer a well-planned transport network covering key locations across North Bengaluru. Call or WhatsApp our admissions team with your locality and we will promptly confirm route availability.' },
+  { question: 'Does the school have CCTV and safety measures?', answer: 'Yes — student safety is a top priority. Our campus is equipped with CCTV surveillance and well-monitored systems to ensure a secure environment for every child. We invite you to visit the campus to experience our safety infrastructure firsthand.' },
+  { question: 'Does Triveni have a parent communication app?', answer: 'Yes. We offer a dedicated parent communication app through SchoolCanvas, available on Google Play — designed for real-time updates on attendance, assignments and announcements. Access is provided upon enrolment.' },
 ]
 
 export default function AdmissionsPage() {
@@ -51,8 +48,8 @@ export default function AdmissionsPage() {
     <>
       <PageHero
         title="Join the Triveni Family"
-        description="Begin your child's journey at Triveni Public School — quality ICSE education, a nurturing environment, and a community that genuinely cares. Seats are filling fast."
-        badge="Admissions Open for 2026–27"
+        description="Begin your child's journey at Triveni Balavikas Central School — quality ICSE education, a nurturing environment and a community that genuinely cares. Seats are filling fast."
+        badge="Admissions Open for 2026–2027"
       />
 
       {/* Trust mini-cards */}
@@ -60,9 +57,9 @@ export default function AdmissionsPage() {
         <div className="container-main">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: 'ri-award-line', title: 'CISCE Affiliated', desc: 'School Code KA-214 — officially recognised by CISCE, New Delhi' },
-              { icon: 'ri-wallet-line', title: 'Affordable Fees', desc: 'Premium ICSE education at fees that make sense for every family' },
-              { icon: 'ri-bus-line', title: 'Transport Available', desc: 'Bus routes across North Bengaluru for safe and convenient travel' },
+              { icon: 'ri-award-line', title: 'ICSE Curriculum', desc: 'Comprehensive, balanced curriculum from Grade I to Grade VIII — Primary and Middle School' },
+              { icon: 'ri-wallet-line', title: 'Accessible Excellence', desc: 'Quality education at a fee structure designed to be fair and within reach for families' },
+              { icon: 'ri-bus-line', title: 'Transport Available', desc: 'Well-organised bus routes across North Bengaluru with GPS tracking and trained caretakers' },
               { icon: 'ri-parent-line', title: 'Parent App Available', desc: 'Stay connected via our SchoolCanvas app on Google Play — real-time updates and attendance' },
             ].map((c, i) => (
               <FadeIn key={c.title} delay={i * 0.1}>
@@ -134,7 +131,7 @@ export default function AdmissionsPage() {
                     ))}
                   </tbody>
                 </table>
-                <p className="text-muted text-xs mt-3">* Please confirm exact age cut-offs with the school office for the current academic year.</p>
+                <p className="text-muted text-xs mt-3">* Minimum age as on 1 June. Please confirm with the school office for the current academic year.</p>
               </div>
               {/* Documents */}
               <div className="bg-white rounded-md p-8 shadow-sm border border-border">
@@ -153,11 +150,11 @@ export default function AdmissionsPage() {
               {/* Quick contact */}
               <div className="bg-primary rounded-md p-8">
                 <h3 className="font-urbanist font-extrabold text-lg text-white mb-4">Prefer to Talk?</h3>
-                <p className="text-white/75 text-sm mb-5">Our admissions team is available Monday to Saturday, 9 AM – 4 PM.</p>
-                <a href="tel:+918023721148" className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-urbanist font-semibold py-3.5 rounded-pill transition-colors duration-300 mb-3 text-[15px]">
-                  <i className="ri-phone-line" /> Call Us Now
+                <p className="text-white/75 text-sm mb-5">Mon – Fri: 9:00 AM – 3:00 PM<br />Sat: 9:00 AM – 2:00 PM</p>
+                <a href="tel:+918028397648" className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-urbanist font-semibold py-3.5 rounded-pill transition-colors duration-300 mb-3 text-[15px]">
+                  <i className="ri-phone-line" /> Call 080 2839 7648
                 </a>
-                <a href="https://wa.me/918023721148" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border-2 border-white/60 hover:bg-white/12 hover:border-white text-white font-urbanist font-semibold py-3.5 rounded-pill transition-all duration-300 text-[15px]">
+                <a href="https://wa.me/919740701861" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 border-2 border-white/60 hover:bg-white/12 hover:border-white text-white font-urbanist font-semibold py-3.5 rounded-pill transition-all duration-300 text-[15px]">
                   <i className="ri-whatsapp-line" /> WhatsApp Us
                 </a>
               </div>
@@ -172,7 +169,7 @@ export default function AdmissionsPage() {
           <div className="text-center mb-14">
             <SectionLabel>For Parents</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Stay Connected from Day One</h2>
-            <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">Once your child joins Triveni, two systems keep you informed and involved every single school day.</p>
+            <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">From the moment your child joins Triveni, two systems keep you informed and involved every single school day.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -243,7 +240,7 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      <CTABanner heading="Don't Miss the 2026–27 Admissions Window" subtext="Seats are limited. Fill in the enquiry form above or call us today to secure your child's place." primaryLabel="Enquire Now" primaryHref="/admissions#enquiry-form" secondaryLabel="Find Us" secondaryHref="/contact" />
+      <CTABanner heading="Don't Miss the 2026–2027 Admissions Window" subtext="Seats are limited. Fill in the enquiry form above or call us today to secure your child's place." primaryLabel="Enquire Now" primaryHref="/admissions#enquiry-form" secondaryLabel="Find Us" secondaryHref="/contact" />
     </>
   )
 }

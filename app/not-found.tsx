@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Page Not Found | Triveni Public School',
+  title: 'Page Not Found | Triveni Balavikas Central School',
 }
 
 export default function NotFound() {

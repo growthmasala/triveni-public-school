@@ -41,7 +41,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label className="block font-urbanist font-semibold text-sm text-[#1A1A2A] mb-2">Phone / WhatsApp *</label>
-          <input {...register('phone', { required: true })} className={inputCls(!!errors.phone)} placeholder="+91 80 2372 1148" />
+          <input {...register('phone', { required: true })} className={inputCls(!!errors.phone)} placeholder="+91 97407 01861" />
         </div>
       </div>
       <div className="mb-5">
