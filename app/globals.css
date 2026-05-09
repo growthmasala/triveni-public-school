@@ -123,3 +123,12 @@
   @keyframes spin-cw  { to { transform: rotate( 360deg); } }
   @keyframes spin-ccw { to { transform: rotate(-360deg); } }
 }
+
+/* ── Testimonials marquee — equalise slide heights so every card matches the tallest ── */
+.testimonials-marquee .swiper-wrapper {
+  align-items: stretch;
+}
+.testimonials-marquee .swiper-slide {
+  height: auto;
+  display: flex;
+}

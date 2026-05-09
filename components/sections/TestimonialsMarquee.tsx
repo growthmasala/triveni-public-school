@@ -27,7 +27,7 @@ export default function TestimonialsMarquee() {
       autoplay={{
         delay: 1,
         disableOnInteraction: false,
-        pauseOnMouseEnter: false,
+        pauseOnMouseEnter: true,
       }}
       loopAdditionalSlides={3}
       onSwiper={(swiper: SwiperType) => {

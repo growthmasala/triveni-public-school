@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
 export interface TestimonialCardProps {
@@ -9,10 +12,16 @@ export interface TestimonialCardProps {
   className?: string
 }
 
+// Show "Read more" only when the quote is long enough to actually need it.
+const LONG_QUOTE_THRESHOLD = 220
+
 export function TestimonialCard({ quote, name, role, imageSrc, imageAlt, className }: TestimonialCardProps) {
+  const [expanded, setExpanded] = useState(false)
+  const isLong = quote.length > LONG_QUOTE_THRESHOLD
+
   return (
     <div className={cn(
-      'w-80 shrink-0 flex flex-col items-start border border-border p-6 rounded-2xl bg-white shadow-sm',
+      'w-80 shrink-0 flex flex-col items-start border border-border p-6 rounded-2xl bg-white shadow-sm min-h-95',
       className
     )}>
       {/* Quote icon */}
@@ -27,11 +36,24 @@ export function TestimonialCard({ quote, name, role, imageSrc, imageAlt, classNa
         ))}
       </div>
 
-      {/* Quote text */}
-      <p className="text-sm mt-4 text-muted leading-[1.75] flex-1">{quote}</p>
+      {/* Quote text — clamped by default; clicking "Read more" reveals the full quote */}
+      <p className={cn('text-sm mt-4 text-muted leading-[1.75]', !expanded && 'line-clamp-7')}>
+        {quote}
+      </p>
 
-      {/* Avatar + name */}
-      <div className="flex items-center gap-3 mt-5">
+      {/* Read more / less toggle — only when the quote is actually long */}
+      {isLong && (
+        <button
+          type="button"
+          onClick={() => setExpanded(prev => !prev)}
+          className="mt-2 text-accent font-urbanist font-semibold text-[13px] hover:underline self-start"
+        >
+          {expanded ? 'Read less ↑' : 'Read more →'}
+        </button>
+      )}
+
+      {/* Avatar + name — pinned to the bottom regardless of quote length */}
+      <div className="flex items-center gap-3 mt-auto pt-5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageSrc}
