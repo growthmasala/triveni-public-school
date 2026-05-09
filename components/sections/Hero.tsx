@@ -17,7 +17,7 @@ const stats: StatItem[] = [
 const trust = [
   { icon: 'ri-checkbox-circle-fill', text: '25+ Years of Excellence' },
   { icon: 'ri-checkbox-circle-fill', text: 'ICSE Curriculum' },
-  { icon: 'ri-checkbox-circle-fill', text: 'NIE Partner: Times of India & The Hindu' },
+  { icon: 'ri-checkbox-circle-fill', text: 'NIE · TOI & The Hindu' },
   { icon: 'ri-checkbox-circle-fill', text: 'Grades I to VIII' },
 ]
 
@@ -44,7 +44,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="container-main w-full pt-24 pb-10 md:py-28 md:pb-16 lg:py-35 lg:pb-40">
+        <div className="container-main w-full pt-24 pb-10 md:py-28 md:pb-16 lg:pt-32 lg:pb-56 xl:pb-44">
           <FadeIn>
             <div className="w-full lg:w-[58%]">
 
