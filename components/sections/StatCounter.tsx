@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 
-interface Props { target: number; suffix: string; label: string }
+interface Props { target: number; suffix: string; label: string; sub?: string }
 
-export default function StatCounter({ target, suffix, label }: Props) {
+export default function StatCounter({ target, suffix, label, sub }: Props) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
@@ -26,9 +26,10 @@ export default function StatCounter({ target, suffix, label }: Props) {
 
   return (
     <div ref={ref} className="flex-1 text-center py-7 px-4">
-      <div className="font-urbanist font-black text-accent text-[clamp(32px,3vw,42px)] leading-none mb-1.5">
+      <div className="font-urbanist font-black text-accent text-[clamp(32px,3vw,42px)] leading-none mb-0.5">
         {count}{suffix}
       </div>
+      {sub && <div className="text-[11px] text-white/50 mb-1.5">{sub}</div>}
       <div className="text-[13px] font-medium text-white/70 uppercase tracking-[0.06em]">{label}</div>
     </div>
   )

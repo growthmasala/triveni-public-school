@@ -38,11 +38,11 @@ const programs = [
 
 
 const faqs = [
-  { question: 'Which board does Triveni Balavikas Central School follow?', answer: 'We follow the ICSE curriculum prescribed by the Council for the Indian School Certificate Examinations (CISCE), New Delhi — a structured, balanced and nationally recognised academic framework.' },
+  { question: 'Which board does Triveni Balavikas Central School follow?', answer: 'Triveni Balavikas Central School imparts education in accordance with the ICSE curriculum from Grade I to Grade VIII.' },
   { question: 'What grades does the school offer?', answer: 'We offer Grade I to Grade VIII — encompassing the Primary section (Grades I to V) and the Middle School section (Grades VI to VIII).' },
   { question: 'Where is the school located?', answer: 'We are at No. 39/1, Hesaraghatta Main Road, Bagalagunte, Nagasandra Post, Bengaluru – 560073.' },
   { question: 'How do I apply for admission?', answer: 'Visit our <a href="/admissions" class="text-accent underline">Admissions page</a> or fill in the enquiry form. Our team will contact you within 24 hours.' },
-  { question: 'Does the school have a transport / bus facility?', answer: 'Yes. We offer transport facilities across multiple routes in North Bengaluru. Please contact the school office to check availability and confirm coverage for your area.' },
+  { question: 'Does the school have a transport / bus facility?', answer: 'Triveni Balavikas Central School offers transport facilities across multiple routes in North Bengaluru. Kindly contact the school office to check availability and confirm coverage for your area.' },
 ]
 
 const galleryImages = [

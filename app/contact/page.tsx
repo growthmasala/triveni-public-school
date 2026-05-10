@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import PageHero from '@/components/sections/PageHero'
 import CTABanner from '@/components/sections/CTABanner'
 import SectionLabel from '@/components/ui/SectionLabel'
 import FadeIn from '@/components/ui/FadeIn'
 import ContactForm from '@/components/sections/ContactForm'
-import { TESTIMONIALS } from '@/lib/testimonials'
+import TestimonialsMarquee from '@/components/sections/TestimonialsMarquee'
 
 export const metadata: Metadata = {
   title: 'Contact Us | Triveni Balavikas Central School – Hesaraghatta Road, Bagalagunte',
@@ -14,15 +13,6 @@ export const metadata: Metadata = {
 }
 
 const areas = ['Bagalagunte', 'Nagasandra', 'Hesaraghatta Road', 'Peenya', 'Yeshwanthpur', 'Mallasandra', 'T. Dasarahalli', 'Your Area?']
-
-const featuredTestimonials = TESTIMONIALS.slice(0, 3).map(t => ({
-  initial: t.name[0],
-  name: t.name,
-  role: t.role,
-  photo: t.photo,
-  rating: 5,
-  quote: t.quote,
-}))
 
 const schemaOrg = {
   '@context': 'https://schema.org',
@@ -44,7 +34,7 @@ export default function ContactPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
       <PageHero
         title="Get in Touch"
-        description="We'd love to hear from you. Whether you have a question about admissions, curriculum or want to visit — reach out and we'll respond promptly."
+        description="We're here to help, every step of the way. Whether you're exploring admissions, understanding our curriculum or planning a visit, connect with us — and expect a prompt, warm and helpful response."
       />
 
       {/* Quick contact cards */}
@@ -55,10 +45,10 @@ export default function ContactPage() {
               { icon: 'ri-phone-fill', title: 'Call Us', desc: '080 2839 7648', sub: 'Mon – Fri 9 AM – 3 PM · Sat 9 AM – 2 PM', href: 'tel:+918028397648' },
               { icon: 'ri-whatsapp-line', title: 'WhatsApp', desc: '+91 97407 01861', sub: 'Quick responses', href: 'https://wa.me/919740701861', iconColor: 'text-[#25D366]', iconBg: 'bg-[#25D366]/10' },
               { icon: 'ri-mail-fill', title: 'Email Us', desc: 'trivenitrust@gmail.com', sub: 'Response within 24 hours', href: 'mailto:trivenitrust@gmail.com' },
-              { icon: 'ri-map-pin-fill', title: 'Visit Us', desc: 'Hesaraghatta Main Road', sub: 'Bagalagunte, Bengaluru 560073', href: 'https://maps.google.com/maps?q=No.+39%2F1+Hesaraghatta+Main+Road+Bagalagunte+Bengaluru+560073' },
+              { icon: 'ri-map-pin-fill', title: 'Visit Us', desc: 'No. 39/1, Hesaraghatta Main Road', sub: 'Bagalagunte, Bengaluru 560073', href: 'https://maps.google.com/maps?q=No.+39%2F1+Hesaraghatta+Main+Road+Bagalagunte+Bengaluru+560073' },
             ].map((c, i) => (
-              <FadeIn key={c.title} delay={i * 0.1}>
-                <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="bg-white rounded-md p-6 shadow-sm border border-border flex gap-4 items-start hover:shadow-md hover:border-accent transition-all duration-300 block no-underline">
+              <FadeIn key={c.title} delay={i * 0.1} className="h-full">
+                <a href={c.href} target={c.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" className="bg-white rounded-md p-6 shadow-sm border border-border flex gap-4 items-start hover:shadow-md hover:border-accent transition-all duration-300 no-underline h-full">
                   <div className={`w-[52px] h-[52px] rounded-md flex items-center justify-center text-xl shrink-0 ${c.iconBg ?? 'bg-accent/10'} ${c.iconColor ?? 'text-accent'}`}>
                     <i className={c.icon} />
                   </div>
@@ -133,16 +123,16 @@ export default function ContactPage() {
         <div className="container-main">
           <div className="text-center mb-10">
             <SectionLabel>Transport &amp; Areas Served</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Safe, Reliable Transport Across North Bengaluru</h2>
-            <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">Triveni Balavikas Central School offers a well-planned transport network covering key localities across North-West Bengaluru. Contact us to confirm availability for your area.</p>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Safe, Reliable Connectivity Across North Bengaluru</h2>
+            <p className="text-muted text-[17px] max-w-160 mx-auto leading-[1.75]">Triveni Balavikas Central School offers a well-planned transport network covering key localities across North-West Bengaluru. Designed for safety, punctuality and convenience, our bus routes ensure a smooth daily commute. Connect with us to confirm availability for your area and route details.</p>
           </div>
 
           {/* Transport highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
             {[
-              { icon: 'ri-bus-line', title: 'School Bus Service', desc: 'Each bus has GPS tracking, onboard CCTV, trained caretakers and experienced drivers — safe, punctual and reassuring.' },
-              { icon: 'ri-shield-check-line', title: 'Safe & Supervised', desc: 'Every route is carefully monitored and supported by trained staff. Student safety during transit is a daily commitment at Triveni.' },
-              { icon: 'ri-phone-line', title: 'Confirm Your Route', desc: 'Share your locality with us via call or WhatsApp and our team will promptly confirm route availability and timings.' },
+              { icon: 'ri-bus-line', title: 'School Bus Service', desc: 'A reliable and well-managed transport network connecting key routes across North Bengaluru. With a focus on safety, punctuality and attentive supervision, every journey is smooth, secure and reassuring for both students and parents.' },
+              { icon: 'ri-shield-check-line', title: 'Safe & Supervised', desc: 'Every route is carefully monitored and supported by trained staff, ensuring vigilant supervision at all times. At Triveni, student safety during transit is not just a priority — it is a commitment we uphold every day.' },
+              { icon: 'ri-phone-line', title: 'Confirm Your Route', desc: 'Share your locality with us via call or WhatsApp, and our team will promptly confirm route availability along with detailed timings — ensuring a smooth and well-planned commute for your child.' },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
                 <div className="bg-white rounded-md p-7 shadow-sm border border-border flex gap-4 items-start">
@@ -173,34 +163,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-22">
+      {/* Reviews — uses the same Swiper marquee + TestimonialCard format as the home page */}
+      <section className="py-22 bg-dark">
         <div className="container-main">
-          <div className="text-center mb-10">
+          <div className="text-center mb-12">
             <SectionLabel>What Parents Say</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Trusted by Families Across North Bengaluru</h2>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-white mb-4">Trusted by Families Across North Bengaluru</h2>
+            <p className="text-white/60 text-[17px] leading-[1.75] max-w-160 mx-auto">The confidence of our parent community speaks for itself — built on consistent quality, care and a shared commitment to every child&apos;s growth.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredTestimonials.map((t, i) => (
-              <FadeIn key={t.name} delay={i * 0.1}>
-                <div className="bg-white rounded-md p-8 shadow-md border border-border h-full">
-                  <div className="flex gap-1 text-accent mb-4">{Array.from({length: t.rating}).map((_, j) => <i key={j} className="ri-star-fill" />)}</div>
-                  <p className="text-body text-base leading-[1.75] italic mb-6">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="flex items-center gap-3.5">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-surface shrink-0">
-                      <Image src={t.photo} alt={t.name} fill sizes="48px" className="object-cover object-top" />
-                    </div>
-                    <div>
-                      <p className="font-urbanist font-bold text-[#1A1A2A] text-base">{t.name}</p>
-                      <p className="text-muted text-[13px]">{t.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <a href="/admissions#enquiry-form" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-primary border-2 border-primary rounded-pill px-7 py-3.5 hover:bg-primary hover:text-white transition-all duration-300">
+          <TestimonialsMarquee />
+          <div className="text-center mt-10">
+            <a href="/admissions#enquiry-form" className="inline-flex items-center gap-2 font-urbanist font-semibold text-[15px] text-white bg-accent hover:bg-accent-dark rounded-pill px-7 py-3.5 transition-all duration-300">
               <i className="ri-user-add-line" /> Enquire for Admission
             </a>
           </div>

@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 }
 
 const pedagogy = [
-  { icon: 'ri-microscope-line', title: '5E Inquiry-Based Science', desc: 'Our science teaching uses the globally proven 5E model: Engage, Explore, Explain, Elaborate, Evaluate. Students discover principles through hands-on experimentation, building genuine understanding and a love of science.' },
-  { icon: 'ri-bar-chart-grouped-line', title: 'Remedial Support Programme', desc: 'A structured, data-informed remedial programme designed to identify and address individual learning gaps. Special support classes are conducted from 3:15 p.m. to 4:00 p.m., offering targeted guidance and personalised attention.' },
-  { icon: 'ri-scales-line', title: 'Ethics as a Core Subject', desc: 'We treat ethics as a formal subject — not a values poster on the wall. With dedicated resource materials and structured sessions, we systematically build moral character, integrity and empathy in every student.' },
-  { icon: 'ri-newspaper-line', title: 'Newspaper in Education (NIE)', desc: 'Our partnership with The Times of India and The Hindu brings the real world into the classroom. Students participate in NIE Play Fest, Fun Fest, seminars, workshops and quiz competitions.' },
-  { icon: 'ri-trophy-line', title: 'Competitive Exam Preparation', desc: 'Structured current affairs sessions prepare students for national and international competitive examinations. Students learn to think quickly, reason broadly and stay abreast of global events.' },
-  { icon: 'ri-recycle-line', title: 'Sustainability in Action', desc: 'Students lead our Waste-Paper Recycling Project — a live sustainability initiative on campus. Through hands-on participation, students take ownership of a real environmental challenge within the school community.' },
+  { icon: 'ri-microscope-line', title: '5E Inquiry-Based Science', desc: 'Our science program is rooted in the globally recognised 5E instructional model — Engage, Explore, Explain, Elaborate and Evaluate. Through hands-on investigations and guided inquiry, students actively construct understanding, connect concepts to real-world contexts and develop a lasting curiosity and appreciation for science.' },
+  { icon: 'ri-bar-chart-grouped-line', title: 'Remedial Support Programme', desc: 'A structured, data-informed remedial programme designed to identify and address individual learning gaps. Special support classes are conducted from 3:15 p.m. to 4:00 p.m., offering targeted guidance and personalised attention to help every student strengthen their understanding and progress with confidence.' },
+  { icon: 'ri-scales-line', title: 'Ethics as a Core Subject', desc: 'Ethics is not merely displayed on posters but taught as a formal subject within our curriculum. Through dedicated resource materials and well-structured sessions, we intentionally nurture moral character, integrity and empathy in every student.' },
+  { icon: 'ri-newspaper-line', title: 'Newspaper in Education (NIE)', desc: 'Through our collaboration with The Times of India and The Hindu, we bring the real world into the classroom. The NIE programme enhances students\' awareness, critical thinking and communication skills through active participation in events such as Play Fest, Fun Fest, seminars, workshops and quiz competitions.' },
+  { icon: 'ri-trophy-line', title: 'Competitive Exam Preparation', desc: 'Our structured current affairs sessions equip students for national and international competitive examinations. By engaging with real-world developments, students sharpen their analytical thinking, enhance reasoning abilities and develop the agility to respond with clarity and confidence while staying consistently informed about global events.' },
+  { icon: 'ri-recycle-line', title: 'Sustainability in Action', desc: 'Students of our school lead our Waste-Paper Recycling Project — a live sustainability initiative. Through this hands-on effort, they take ownership of a real environmental challenge within the school community, fostering responsibility, collaboration and a deep commitment to sustainable practices.' },
 ]
 
 const clubs = [
-  { icon: 'ri-book-mark-line', title: 'Literary Club', desc: 'Building the four language skills — Reading, Writing, Listening and Speaking — through debates, storytelling and creative writing.' },
-  { icon: 'ri-mic-line', title: 'Theatre in Education', desc: 'Professional theatre staff guide students in dramatic expression, communication skills and confident self-presentation.' },
-  { icon: 'ri-music-2-line', title: 'Music', desc: 'Students with aptitude for classical and contemporary music receive specialised training across instruments and voice.' },
-  { icon: 'ri-rhythm-line', title: 'Dance', desc: 'Classical and contemporary dance as an optional subject. Students perform at school events and develop poise and artistic expression.' },
+  { icon: 'ri-book-mark-line', title: 'Literary Club', desc: 'We cultivate the four essential language skills — reading, writing, listening and speaking — through engaging activities such as debates, storytelling and creative writing, fostering confident communication and a lasting appreciation for language.' },
+  { icon: 'ri-mic-line', title: 'Theatre in Education', desc: 'Under the guidance of trained theatre professionals, students explore dramatic expression while developing communication skills, creativity and confident self-presentation.' },
+  { icon: 'ri-music-2-line', title: 'Music', desc: 'Students with a passion and aptitude for both classical and contemporary music receive specialised training in vocal and instrumental performance, nurturing creativity, discipline and artistic expression.' },
+  { icon: 'ri-rhythm-line', title: 'Dance', desc: 'Dance is offered as an optional subject, encompassing both classical and contemporary forms. Students receive structured training, perform at school events and develop grace, confidence and expressive artistry.' },
 ]
 
 export default function AcademicsPage() {
@@ -33,7 +33,7 @@ export default function AcademicsPage() {
     <>
       <PageHero
         title="Academics at Triveni"
-        description="ICSE curriculum from Grade I to Grade VIII — combining rigorous academics with innovative pedagogy, co-curricular depth and character development."
+        description="A thoughtfully designed academic program from Grade I to Grade VIII, blending the ICSE curriculum with strong foundational learning, innovative teaching practices, co-curricular enrichment and holistic character development."
       />
 
       {/* ICSE Overview */}
@@ -70,7 +70,7 @@ export default function AcademicsPage() {
           <div className="text-center mb-14">
             <SectionLabel>Grade Structure</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Two Wings of Learning</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Our academic structure is thoughtfully divided into two stages — building strong foundations in the Primary years and advancing skills, independence and critical thinking in the Middle School years.</p>
+            <p className="text-muted text-[17px] max-w-160 mx-auto leading-[1.75]">Our academic structure is thoughtfully divided into two stages, each designed to align with the developmental needs of learners — building strong foundations in the early years and advancing skills, independence and critical thinking in the middle years.</p>
           </div>
 
           {[
@@ -132,7 +132,7 @@ export default function AcademicsPage() {
           <div className="text-center mb-14">
             <SectionLabel>Our Pedagogy</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Teaching That Transforms Learning</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Our pedagogical approach is built around how children actually learn — with active engagement, real-world connections and continuous, data-informed progress.</p>
+            <p className="text-muted text-[17px] max-w-180 mx-auto leading-[1.75]">At Triveni, our pedagogy goes beyond textbooks — designed around how children truly learn. Through active engagement, real-world connections and continuous, data-informed progress, we nurture confident, curious learners who think independently and grow with purpose.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {pedagogy.map((p, i) => (
@@ -156,9 +156,9 @@ export default function AcademicsPage() {
       <section className="py-22 bg-surface" id="clubs">
         <div className="container-main">
           <div className="text-center mb-14">
-            <SectionLabel>Beyond the Classroom</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Clubs, Arts &amp; Activities</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">We strike the right balance between academic rigour and co-curricular enrichment — because the whole child matters.</p>
+            <SectionLabel>Clubs &amp; Creative Arts</SectionLabel>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Holistic Development through Clubs &amp; Creative Arts</h2>
+            <p className="text-muted text-[17px] max-w-160 mx-auto leading-[1.75]">We strike a meaningful balance between academic rigour and co-curricular engagement, nurturing each student&apos;s intellectual, creative and personal growth — because true education is about shaping the whole child.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             {clubs.map((c, i) => (
@@ -177,10 +177,10 @@ export default function AcademicsPage() {
             <div className="bg-primary rounded-lg p-12 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-12 items-center">
               <div>
                 <i className="ri-map-pin-line text-5xl text-accent block mb-4" />
-                <h3 className="font-urbanist font-extrabold text-2xl text-white mb-3">Field Trips &amp; Educational Visits</h3>
+                <h3 className="font-urbanist font-extrabold text-2xl text-white mb-3">Experiential Learning through Field Trips &amp; Educational Visits</h3>
                 <p className="text-white/70 leading-[1.7] text-sm">Real-world exposure for every student.</p>
               </div>
-              <p className="text-white/85 leading-[1.8] text-base">Educational visits and trips to <strong className="text-white">multinational companies</strong>, <strong className="text-white">renowned establishments</strong>, cultural sites and industry hubs are organised at different levels throughout the academic year — bringing subjects to life and giving students a tangible understanding of the professional world they will one day enter.</p>
+              <p className="text-white/85 leading-[1.8] text-base">We provide meaningful real-world exposure for every student through carefully planned educational visits and field trips. Excursions to <strong className="text-white">multinational companies</strong>, <strong className="text-white">leading institutions</strong>, cultural landmarks and industry hubs are integrated across grade levels — bringing classroom learning to life and offering students valuable insight into the professional world they will one day enter.</p>
             </div>
           </FadeIn>
         </div>

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 }
 
 const steps = [
-  { n: '1', title: 'Enquire', desc: 'Fill in our enquiry form or call / WhatsApp our admissions office. Share your child\'s name, age and preferred grade.' },
+  { n: '1', title: 'Enquire', desc: 'Start your journey by filling out our enquiry form or connecting with our admissions office via call or WhatsApp. Share your child\'s name, age and preferred grade, and our team will guide you through the next steps.' },
   { n: '2', title: 'Visit the School', desc: 'Schedule a campus visit on Hesaraghatta Main Road. Meet our team, see classrooms in action and get personalised answers to all your questions.' },
-  { n: '3', title: 'Submit Documents', desc: 'Submit the required documents with the completed application form. Our team will promptly review, verify and acknowledge your submission.' },
-  { n: '4', title: 'Confirmation & Fees', desc: 'Once documents are verified, secure your child\'s admission by completing the fee payment. Welcome to the Triveni family!' },
+  { n: '3', title: 'Submit Documents', desc: 'Complete your application by submitting the required documents along with the form. Our admissions team will promptly review, verify and acknowledge your submission, ensuring a smooth and hassle-free process.' },
+  { n: '4', title: 'Confirmation & Fee Payment', desc: 'Once your documents are successfully verified, secure your child\'s admission by completing the fee payment. With this final step, you officially become a part of the Triveni family — welcome aboard!' },
 ]
 
 const ageCriteria = [
@@ -36,11 +36,11 @@ const documents = [
 
 const faqs = [
   { question: 'Is there an entrance test for admission?', answer: 'For most grades, admission is based on document verification and an informal interaction. For higher grades, there may be an informal assessment. Please contact the school to confirm for the specific grade.' },
-  { question: 'Do you offer mid-year admissions?', answer: 'Yes — mid-year admissions are considered based on seat availability. Each request is reviewed individually to ensure the best fit for the student. Contact our admissions office for the latest seat status and personalised guidance.' },
-  { question: 'What is the fee structure at Triveni Balavikas Central School?', answer: 'We are committed to making high-quality education accessible, offering excellent academic standards at a fee structure that is fair and thoughtfully designed for families. For detailed and up-to-date information, please connect with our admissions office.' },
-  { question: 'Is transport available from my area?', answer: 'We offer a well-planned transport network covering key locations across North Bengaluru. Call or WhatsApp our admissions team with your locality and we will promptly confirm route availability.' },
-  { question: 'Does the school have CCTV and safety measures?', answer: 'Yes — student safety is a top priority. Our campus is equipped with CCTV surveillance and well-monitored systems to ensure a secure environment for every child. We invite you to visit the campus to experience our safety infrastructure firsthand.' },
-  { question: 'Does Triveni have a parent communication app?', answer: 'Yes. We offer a dedicated parent communication app through SchoolCanvas, available on Google Play — designed for real-time updates on attendance, assignments and announcements. Access is provided upon enrolment.' },
+  { question: 'Do you offer mid-year admissions?', answer: 'Yes — mid-year admissions are considered based on seat availability. Each request is reviewed individually to ensure the best fit for the student. We recommend contacting our admissions office for the latest seat status and personalised guidance.' },
+  { question: 'What is the fee structure at Triveni Balavikas Central School?', answer: 'At Triveni Balavikas Central School, we are committed to making high-quality education accessible, offering excellent academic standards at a fee structure that is both fair and thoughtfully designed for families. For detailed and up-to-date information on our fees, we invite you to connect with our admissions office — our team will be happy to guide you.' },
+  { question: 'Is transport available from my area?', answer: 'Triveni Balavikas Central School offers a well-planned transport network covering key locations across North Bengaluru. Simply call or WhatsApp our admissions team with your locality, and we\'ll promptly confirm route availability and assist you with the details.' },
+  { question: 'Does the school have CCTV and safety measures?', answer: 'Student safety is a top priority at Triveni Balavikas Central School. Our campus is equipped with comprehensive safety measures, including CCTV surveillance and well-monitored systems to ensure a secure environment for every child. We invite you to visit the campus to experience our safety infrastructure firsthand and gain a complete understanding of the measures in place.' },
+  { question: 'Does Triveni have a parent communication app?', answer: 'Yes. Triveni Balavikas Central School offers a dedicated parent communication app through SchoolCanvas, available on Google Play. Designed for real-time updates and seamless connectivity, the app keeps you informed about your child\'s attendance, assignments, announcements and more — right at your fingertips. Access is provided upon enrolment, ensuring you stay connected from day one.' },
 ]
 
 export default function AdmissionsPage() {
@@ -48,7 +48,7 @@ export default function AdmissionsPage() {
     <>
       <PageHero
         title="Join the Triveni Family"
-        description="Begin your child's journey at Triveni Balavikas Central School — quality ICSE education, a nurturing environment and a community that genuinely cares. Seats are filling fast."
+        description="Begin your child's journey at Triveni Balavikas Central School — where quality education meets a nurturing environment and a community that truly cares. With limited seats available, we invite you to be part of a school that prioritises both excellence and character."
         badge="Admissions Open for 2026–2027"
       />
 
@@ -57,13 +57,13 @@ export default function AdmissionsPage() {
         <div className="container-main">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: 'ri-award-line', title: 'ICSE Curriculum', desc: 'Comprehensive, balanced curriculum from Grade I to Grade VIII — Primary and Middle School' },
-              { icon: 'ri-wallet-line', title: 'Accessible Excellence', desc: 'Quality education at a fee structure designed to be fair and within reach for families' },
-              { icon: 'ri-bus-line', title: 'Transport Available', desc: 'Well-organised bus routes across North Bengaluru with GPS tracking and trained caretakers' },
-              { icon: 'ri-parent-line', title: 'Parent App Available', desc: 'Stay connected via our SchoolCanvas app on Google Play — real-time updates and attendance' },
+              { icon: 'ri-award-line', title: 'CISCE Curriculum', desc: 'Triveni Balavikas Central School follows the curriculum prescribed by the Council for the Indian School Certificate Examinations (CISCE), New Delhi — ensuring a structured, balanced and nationally recognised academic framework.' },
+              { icon: 'ri-wallet-line', title: 'Accessible Excellence', desc: 'High-quality education delivered with care and rigour — at a fee structure designed to be fair, transparent and within reach for families.' },
+              { icon: 'ri-bus-line', title: 'Safe & Reliable Transport', desc: 'Our well-organised network covers key routes across North Bengaluru — equipped with GPS tracking, onboard CCTV and supported by trained caretakers and experienced drivers, providing a secure and reassuring commute every day.' },
+              { icon: 'ri-smartphone-line', title: 'School Canvas', desc: 'A portal for communication between school and parents — an Android parent app available on Google Play for real-time updates and attendance.' },
             ].map((c, i) => (
               <FadeIn key={c.title} delay={i * 0.1}>
-                <div className="bg-white rounded-md p-6 text-center shadow-sm border border-border">
+                <div className="bg-white rounded-md p-6 text-center shadow-sm border border-border h-full flex flex-col">
                   <i className={`${c.icon} text-accent text-4xl block mb-3`} />
                   <h4 className="font-urbanist font-bold text-base text-[#1A1A2A] mb-1.5">{c.title}</h4>
                   <p className="text-muted text-[13px] leading-[1.6]">{c.desc}</p>
@@ -80,7 +80,7 @@ export default function AdmissionsPage() {
           <div className="text-center mb-14">
             <SectionLabel>Step-by-Step Guide</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">How to Apply — It&apos;s Simple</h2>
-            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Our admissions process is transparent and straightforward. Here&apos;s what to expect from start to finish.</p>
+            <p className="text-muted text-[17px] max-w-[560px] mx-auto leading-[1.75]">Our admissions process is clear, transparent and designed for ease — guiding you smoothly through every step from enquiry to enrolment.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
             <div className="hidden lg:block absolute top-8 left-[calc(12.5%+16px)] right-[calc(12.5%+16px)] h-[2px] bg-border z-0" />
@@ -149,7 +149,7 @@ export default function AdmissionsPage() {
               </div>
               {/* Quick contact */}
               <div className="bg-primary rounded-md p-8">
-                <h3 className="font-urbanist font-extrabold text-lg text-white mb-4">Prefer to Talk?</h3>
+                <h3 className="font-urbanist font-extrabold text-lg text-white mb-4">Prefer to Speak with Us?</h3>
                 <p className="text-white/75 text-sm mb-5">Mon – Fri: 9:00 AM – 3:00 PM<br />Sat: 9:00 AM – 2:00 PM</p>
                 <a href="tel:+918028397648" className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-urbanist font-semibold py-3.5 rounded-pill transition-colors duration-300 mb-3 text-[15px]">
                   <i className="ri-phone-line" /> Call 080 2839 7648
@@ -169,7 +169,7 @@ export default function AdmissionsPage() {
           <div className="text-center mb-14">
             <SectionLabel>For Parents</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">Stay Connected from Day One</h2>
-            <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">From the moment your child joins Triveni, two systems keep you informed and involved every single school day.</p>
+            <p className="text-muted text-[17px] max-w-160 mx-auto leading-[1.75]">From the moment your child joins Triveni, you stay informed, involved and connected — every single school day — through simple, reliable systems designed to keep you closely engaged with your child&apos;s learning journey.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -180,10 +180,9 @@ export default function AdmissionsPage() {
                   <i className="ri-smartphone-line" />
                 </div>
                 <h3 className="font-urbanist font-extrabold text-2xl text-white mb-3">SchoolCanvas Parent App</h3>
-                <p className="text-white/70 leading-[1.8] mb-3">Our official Android parent app keeps you connected to your child&apos;s school life in real time — attendance, assignments, announcements and more, right on your phone.</p>
-                <p className="text-white/70 leading-[1.8] mb-6">Access is provided upon enrolment. The app is free to download on Google Play.</p>
+                <p className="text-white/70 leading-[1.8] mb-6">Stay seamlessly connected to your child&apos;s school life — anytime, anywhere — through our official Android parent app, designed for real-time updates and effortless communication. Access is provided upon enrolment, and the app is free to download on Google Play.</p>
                 <ul className="flex flex-col gap-2.5 mb-8">
-                  {['Real-time attendance and progress updates', 'Assignment and homework notifications', 'School announcements and circulars', 'Direct channel between school and home'].map(item => (
+                  {['Real-time updates on attendance and academic progress', 'Instant notifications for assignments and homework', 'Timely access to school announcements and circulars', 'A direct, reliable communication channel between school and home'].map(item => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-white/80">
                       <i className="ri-check-double-line text-accent text-base shrink-0 mt-0.5" />
                       <span>{item}</span>
@@ -208,20 +207,22 @@ export default function AdmissionsPage() {
                   <i className="ri-book-open-line" />
                 </div>
                 <h3 className="font-urbanist font-extrabold text-2xl text-[#1A1A2A] mb-3">School Diary</h3>
-                <p className="text-muted leading-[1.8] mb-3">Every Triveni student carries a School Diary — a structured, daily two-way communication channel between teachers and parents, signed by both parties every school day.</p>
-                <p className="text-muted leading-[1.8] mb-6">It is not just a homework planner. It is a formal accountability system that keeps parents genuinely informed and teachers genuinely responsive.</p>
-                <ul className="flex flex-col gap-2.5 mb-8">
-                  {['Daily teacher entries on classwork and homework', 'Parent signature confirms home review', 'Formal record through the full academic year', 'Creates a clear home-school communication trail'].map(item => (
+                <p className="text-muted leading-[1.8] mb-3">A simple book with a powerful purpose — the School Diary is a structured, daily bridge between school and home. Maintained and signed by both teachers and parents, it ensures consistent communication, shared responsibility and complete transparency in your child&apos;s learning journey.</p>
+                <p className="text-muted leading-[1.8] mb-6">More than a homework planner, it is a dependable system that keeps parents informed and teachers accountable — every single school day.</p>
+                <ul className="flex flex-col gap-2.5 mt-auto">
+                  {[
+                    'Daily entries by teachers on classwork and homework',
+                    'Parent signatures confirming regular review at home',
+                    'Maintains a continuous, year-long academic record',
+                    'Creates a clear and reliable home–school communication trail',
+                    'Issued to every student at the start of the academic year',
+                  ].map(item => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-body">
                       <i className="ri-check-double-line text-accent text-base shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="mt-auto text-sm text-muted border-t border-border pt-5">
-                  <i className="ri-information-line text-accent mr-1.5" />
-                  The School Diary is issued to every student at the start of the academic year at no extra cost.
-                </p>
               </div>
             </FadeIn>
 
@@ -240,7 +241,7 @@ export default function AdmissionsPage() {
         </div>
       </section>
 
-      <CTABanner heading="Don't Miss the 2026–2027 Admissions Window" subtext="Seats are limited. Fill in the enquiry form above or call us today to secure your child's place." primaryLabel="Enquire Now" primaryHref="/admissions#enquiry-form" secondaryLabel="Find Us" secondaryHref="/contact" />
+      <CTABanner heading="Secure Your Child's Place for 2026–2027" subtext="Admissions are now open, with limited seats available. Complete the enquiry form above or connect with us today to ensure your child's place at Triveni Balavikas Central School." primaryLabel="Enquire Now" primaryHref="/admissions#enquiry-form" secondaryLabel="Find Us" secondaryHref="/contact" />
     </>
   )
 }
