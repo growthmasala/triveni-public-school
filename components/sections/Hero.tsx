@@ -4,11 +4,11 @@ import StatCounter from '@/components/sections/StatCounter'
 import FadeIn from '@/components/ui/FadeIn'
 
 type StatItem =
-  | { kind: 'counter'; target: number; suffix: string; label: string }
+  | { kind: 'counter'; target: number; suffix: string; sub?: string; label: string }
   | { kind: 'text'; value: string; sub: string; label: string }
 
 const stats: StatItem[] = [
-  { kind: 'counter', target: 25, suffix: '+', label: 'Years of Excellence' },
+  { kind: 'counter', target: 25, suffix: '+', sub: 'Years of Excellence', label: 'Triveni Group of Institutions' },
   { kind: 'text', value: 'ICSE', sub: 'Curriculum', label: 'Academic Framework' },
   { kind: 'text', value: 'I – VIII', sub: 'Primary & Middle School', label: 'Grades Offered' },
   { kind: 'text', value: 'NIE Partner', sub: 'Times of India & The Hindu', label: 'Newspaper in Education' },
@@ -103,7 +103,7 @@ export default function Hero() {
                 ].join(' ')}
               >
                 {s.kind === 'counter' ? (
-                  <StatCounter target={s.target} suffix={s.suffix} label={s.label} />
+                  <StatCounter target={s.target} suffix={s.suffix} sub={s.sub} label={s.label} />
                 ) : (
                   <div className="text-center py-7 px-4">
                     <div className="font-urbanist font-black text-accent text-[clamp(20px,2.2vw,28px)] leading-none mb-0.5">{s.value}</div>

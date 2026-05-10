@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 }
 
 const events = [
-  { img: '/images/event-independence-day-aerial-view.jpg', alt: 'Independence Day celebration aerial view', badge: 'National Events', title: 'Independence Day & Republic Day', desc: 'Spectacular patriotic celebrations with aerial formations, flag hoisting and management salutes — a proud display of national spirit.' },
-  { img: '/images/event-janmashtami-kids-costumes-steps.jpg', alt: 'Janmashtami celebration with students in costumes', badge: 'Cultural Festivals', title: 'Janmashtami & Cultural Fests', desc: 'Students celebrate India\'s cultural diversity through traditional costumes, performances and festivities — building pride in heritage.' },
-  { img: '/images/event-sports-day-yuva-kreedotsava-2025.jpg', alt: 'Yuva Kreedotsava Sports Day 2025', badge: 'Sports', title: 'Yuva Kreedotsava 2025', desc: 'Our annual Sports Day celebrates physical fitness, team spirit and the joy of competition across track, field and team sports.' },
+  { img: '/images/event-independence-day-aerial-view.jpg', alt: 'Independence Day celebration aerial view', badge: 'National Events', title: 'Independence Day & Republic Day', desc: 'Spectacular patriotic celebrations that bring the spirit of the nation to life — featuring disciplined formations, ceremonial flag hoisting and inspiring salutes, fostering pride, unity and a deep sense of national identity among students.' },
+  { img: '/images/event-janmashtami-kids-costumes-steps.jpg', alt: 'Janmashtami celebration with students in costumes', badge: 'Cultural Festivals', title: 'Janmashtami & Cultural Fests', desc: 'Vibrant celebrations that showcase India\'s rich cultural heritage — where students express themselves through traditional attire, performances and festive experiences, fostering pride, creativity and a deep connection to their roots.' },
+  { img: '/images/event-sports-day-yuva-kreedotsava-2025.jpg', alt: 'Yuva Kreedotsava Sports Day 2025', badge: 'Sports', title: 'Yuva Kreedotsava 2025', desc: 'A vibrant celebration of sportsmanship and physical excellence, Yuva Kreedotsava brings students together in the spirit of healthy competition. Through a dynamic range of track, field and team events, students build fitness, resilience and teamwork — while experiencing the true joy of participation and achievement.' },
 ]
 
 const galleryImages = [
@@ -31,11 +31,11 @@ const galleryImages = [
 ]
 
 const campus = [
-  { icon: 'ri-building-line', title: 'Modern Classrooms', desc: 'Bright, spacious and well-ventilated learning environments designed to inspire focus and engagement — thoughtfully structured to support interactive teaching.' },
-  { icon: 'ri-book-2-line', title: 'Library', desc: 'A thoughtfully curated, well-stocked library that invites students to explore, read and research in a calm, inspiring environment — nurturing curiosity and a lifelong love of learning.' },
-  { icon: 'ri-computer-line', title: 'Computer Lab', desc: 'A modern, well-equipped space where students build essential digital skills through hands-on learning — preparing them to thrive in a digital-first world.' },
-  { icon: 'ri-football-line', title: 'Sports Facilities', desc: 'Expansive, well-planned spaces for sports and physical education that promote fitness, discipline and teamwork — because a healthy body fuels a healthy mind.' },
-  { icon: 'ri-bus-line', title: 'Transport', desc: 'A well-organised network covering key routes across North Bengaluru, with GPS tracking, onboard CCTV, trained caretakers and experienced drivers.' },
+  { icon: 'ri-building-line', title: 'Modern Classrooms', desc: 'Bright, spacious and well-ventilated learning environments designed to inspire focus and engagement. Thoughtfully structured to support interactive teaching, each classroom fosters clarity, comfort and academic excellence.' },
+  { icon: 'ri-book-2-line', title: 'Library', desc: 'A thoughtfully curated, well-stocked library that invites students to explore, read and research in a calm, inspiring environment. Designed to nurture curiosity and independent learning, it fosters a lifelong love for knowledge beyond the boundaries of the syllabus.' },
+  { icon: 'ri-computer-line', title: 'Computer Lab', desc: 'A modern, well-equipped space where students build essential digital skills through hands-on learning. Designed to foster confidence, creativity and technological fluency, it prepares learners to thrive in a rapidly evolving, digital-first world.' },
+  { icon: 'ri-football-line', title: 'Sports Facilities', desc: 'Expansive, well-planned spaces for sports and physical education that promote fitness, discipline and teamwork. Because a healthy body fuels a healthy mind, every child is encouraged to play, compete and thrive.' },
+  { icon: 'ri-bus-line', title: 'Transport', desc: 'Our well-organised transport network covers key routes across North Bengaluru, ensuring safe and convenient travel for students. Equipped with GPS tracking and onboard CCTV surveillance, each bus is supported by trained caretakers and experienced drivers — providing a secure and reassuring commute every day.' },
   { icon: 'ri-shield-check-line', title: 'Safety & Security', desc: 'A secure, well-monitored campus designed to ensure every child\'s safety and well-being — giving parents complete peace of mind, every single day.' },
 ]
 
@@ -44,7 +44,7 @@ export default function LifePage() {
     <>
       <PageHero
         title="Life at Triveni"
-        description="School is more than academics. At Triveni, every day is filled with curiosity, celebration, sportsmanship and community — because the whole child matters."
+        description="School is more than academics. At Triveni, each day is alive with curiosity, creativity, achievement and a strong sense of community — because true education is about nurturing the whole child."
       />
 
       {/* Intro */}
@@ -58,9 +58,10 @@ export default function LifePage() {
           >
             <FadeIn direction="right">
               <SectionLabel>A Day at Triveni</SectionLabel>
-              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">More Than a School — A Community</h2>
-              <p className="text-muted leading-[1.8] mb-4">From morning assembly to the final bell, life at Triveni is energetic, purposeful and joyful. Our students are not just academic achievers — they are confident performers, team players and critical thinkers.</p>
-              <p className="text-muted leading-[1.8] mb-6">We deliberately balance classroom rigour with rich co-curricular experiences — because the memories children carry from school are not always about chapters learned, but about friendships made and challenges overcome.</p>
+              <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-2">More Than a School — A Community</h2>
+              <p className="text-accent font-urbanist font-semibold text-[15px] tracking-wide mb-4">Where learning is lived, not just taught</p>
+              <p className="text-muted leading-[1.8] mb-4">From the first bell to the last, life at Triveni is vibrant, purposeful and full of energy. Our students grow beyond academics to become confident performers, collaborative team players and thoughtful, independent thinkers.</p>
+              <p className="text-muted leading-[1.8] mb-6">We thoughtfully balance academic rigour with enriching co-curricular experiences — because the most lasting lessons are not just from textbooks, but from friendships built, challenges embraced and moments that shape who our students become.</p>
               <div className="grid grid-cols-2 gap-4">
                 {[['CCA', 'Holistic Development'], ['5+', 'Active Clubs'], ['Sports', 'Indoor & Outdoor'], ['NIE', 'TOI & The Hindu']].map(([val, label]) => (
                   <div key={label} className="bg-surface rounded-md p-5 text-center">
@@ -101,7 +102,7 @@ export default function LifePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { img: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band in red uniforms', badge: 'Performing Arts', title: 'Marching Band & Performing Arts', desc: 'A proud and vibrant tradition at Triveni — our marching band and performing arts programmes showcase precision, rhythm and coordinated excellence. Guided by a dedicated band instructor, students receive structured training that builds discipline, teamwork and confidence.' },
+              { img: '/images/event-marching-band-girls-red.jpg', alt: 'Marching band in red uniforms', badge: 'Performing Arts', title: 'Marching Band & Performing Arts', desc: 'A proud and vibrant tradition at Triveni, our marching band and performing arts programmes showcase precision, rhythm and coordinated excellence. Guided by a dedicated band instructor, students receive structured training that builds discipline, teamwork and confidence. Performing at major school functions and prestigious events, it is an experience students aspire to be part of.' },
               { img: '/images/event-republic-day-salute-management.jpg', alt: 'Republic Day salute and ceremony', badge: 'Patriotic Celebrations', title: 'National Days & Ceremonies', desc: 'Spectacular patriotic celebrations bring the spirit of the nation to life — disciplined formations, ceremonial flag hoisting and inspiring salutes that foster pride, unity and a deep sense of national identity.' },
             ].map((e, i) => (
               <FadeIn key={e.title} delay={i * 0.1}>
@@ -189,7 +190,7 @@ export default function LifePage() {
         <div className="container-main">
           <div className="text-center mb-14">
             <SectionLabel>Our Campus</SectionLabel>
-            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A]">Our Campus — Designed for Learning. Built for Growth.</h2>
+            <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A]">Designed for Learning. Built for Growth.</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {campus.map((c, i) => (

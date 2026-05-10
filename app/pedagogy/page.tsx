@@ -93,7 +93,7 @@ export default function PedagogyPage() {
     <>
       <PageHero
         title="Our Approach to Teaching"
-        description="Triveni's pedagogy goes far beyond the textbook. Every programme listed here is running in our classrooms today — not aspirational, but actual."
+        description="At Triveni, learning extends far beyond the textbook. Every programme highlighted here is actively implemented in our classrooms — reflecting not aspirations, but everyday practice."
         badge="Our Pedagogy"
       />
 
@@ -113,10 +113,10 @@ export default function PedagogyPage() {
                 &ldquo;Intelligence plus character — that is the goal of true education.&rdquo;
               </blockquote>
               <p className="text-muted leading-[1.8] mb-4">
-                Every school in our area claims quality education. What separates Triveni is <strong className="text-body">how</strong> we deliver it. Our programmes are built around how children genuinely engage, question, retain and grow — not how they perform on a single exam.
+                In a landscape where many schools promise quality education, Triveni distinguishes itself through <strong className="text-body">purposeful practice</strong>. Our approach is centred on how children truly learn — how they explore, question, reflect and grow — not merely how they perform in examinations.
               </p>
               <p className="text-muted leading-[1.8] mb-6">
-                The six programmes below are not marketing language. They are running in our classrooms, visible in our students, and confirmed in every parent review we receive.
+                Each programme we offer is thoughtfully designed to nurture curiosity, build character and strengthen understanding. These are not ideas on paper, but lived experiences within our classrooms — visible in our students&apos; confidence, thinking and values, and affirmed by the trust of our parent community.
               </p>
               <Button href="/admissions" variant="accent">
                 <i className="ri-user-add-line" /> Enquire for Admission
@@ -152,17 +152,17 @@ export default function PedagogyPage() {
               <SectionLabel>Parent–School Partnership</SectionLabel>
               <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A] mb-4">The School Diary — A Daily Bridge Between Home and School</h2>
               <p className="text-muted leading-[1.8] mb-4">
-                Every Triveni student carries a <strong className="text-body">School Diary</strong> — a structured, two-way communication channel between teachers and parents. It is signed by both sides, creating a daily record of what was taught, what was assigned and how each child is progressing.
+                Every Triveni student carries a <strong className="text-body">School Diary</strong> that serves as a structured, two-way communication channel between teachers and parents. More than a routine record, it provides a clear, daily snapshot of classroom learning, assignments and each child&apos;s progress — reviewed and acknowledged by both school and home.
               </p>
               <p className="text-muted leading-[1.8] mb-6">
-                This is not a homework planner. It is a formal accountability system that keeps parents genuinely informed and teachers genuinely responsive — every school day.
+                This is not merely a homework planner, but a system of shared accountability that keeps parents meaningfully informed and teachers consistently responsive, strengthening the partnership that supports every child&apos;s growth.
               </p>
               <div className="flex flex-col gap-3">
                 {[
-                  'Daily entries by the teacher — not periodic reports',
-                  'Parent signature confirms homework and progress are reviewed',
-                  'Creates a formal record trail through the academic year',
-                  'Bridges the gap between school performance and home awareness',
+                  'Maintained through daily teacher entries, ensuring consistent and reliable communication',
+                  'Parent acknowledgement through signatures, reinforcing active involvement',
+                  'Creates a transparent and continuous record across the academic year',
+                  'Connects classroom learning with home support, enhancing student progress',
                 ].map(item => (
                   <div key={item} className="flex items-start gap-3 text-[15px] text-body">
                     <i className="ri-check-double-line text-accent text-lg mt-0.5 shrink-0" />
@@ -177,7 +177,7 @@ export default function PedagogyPage() {
 
       <CTABanner
         heading="Experience Our Pedagogy Firsthand"
-        subtext="Schedule a campus visit and see how Triveni's programmes work in real classrooms — not just on a webpage."
+        subtext="Schedule a campus visit to see how Triveni's programmes come alive in real classrooms — authentic, engaging and far beyond what any webpage can convey."
         primaryLabel="Enquire for Admission"
         primaryHref="/admissions#enquiry-form"
         secondaryLabel="Contact Us"

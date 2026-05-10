@@ -93,30 +93,29 @@ export default function AboutPage() {
             <p className="text-muted text-[17px] max-w-140 mx-auto leading-[1.75]">Twenty-five years and counting — the founding family and trust that built the Triveni Group of Institutions.</p>
           </div>
 
-          <div className="flex flex-col gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {LEADERS.filter(l => !l.message).map((leader, i) => (
-              <article
-                key={leader.id}
-                id={leader.id}
-                className="scroll-mt-32 grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-start bg-white rounded-lg p-8 shadow-sm border border-border"
-              >
-                <div className="relative aspect-square w-full max-w-65 mx-auto md:mx-0 rounded-md overflow-hidden bg-primary/10">
-                  {/* Decorative — name + title are adjacent text, so empty alt avoids
-                      duplication when users copy text and keeps screen-reader output clean. */}
-                  <Image
-                    src={leader.photo}
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 240px, 260px"
-                    className="object-cover object-top"
-                  />
-                </div>
-                <FadeIn direction="right" delay={(i % 2) * 0.05}>
-                  <p className="text-accent font-urbanist font-bold text-[12px] uppercase tracking-widest mb-2">{leader.title}</p>
-                  <h3 className="font-urbanist font-extrabold text-[clamp(22px,2.5vw,30px)] text-[#1A1A2A] mb-4">{leader.name}</h3>
-                  <p className="text-muted leading-[1.8]">{leader.bio}</p>
-                </FadeIn>
-              </article>
+              <FadeIn key={leader.id} delay={i * 0.08}>
+                <article
+                  id={leader.id}
+                  className="scroll-mt-32 bg-white rounded-lg overflow-hidden shadow-sm border border-border hover:shadow-md hover:-translate-y-1 hover:border-accent/40 transition-all duration-300 h-full"
+                >
+                  <div className="relative aspect-square w-full bg-primary/5">
+                    {/* Decorative — name + title appear directly below */}
+                    <Image
+                      src={leader.photo}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                  <div className="p-6 text-center">
+                    <p className="text-accent font-urbanist font-bold text-[12px] uppercase tracking-widest mb-1.5">{leader.title}</p>
+                    <h3 className="font-urbanist font-extrabold text-xl text-[#1A1A2A]">{leader.name}</h3>
+                  </div>
+                </article>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -202,31 +201,30 @@ export default function AboutPage() {
             <SectionLabel>Trust &amp; Recognition</SectionLabel>
             <h2 className="font-urbanist font-extrabold text-[clamp(28px,4vw,42px)] text-[#1A1A2A]">Backed by 25+ Years of the Triveni Group</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: 'ri-building-2-line', title: 'Triveni Educational Trust', desc: 'Founded and governed by the Triveni Educational Trust (TET), which also operates the Triveni Group of Institutions across North Bengaluru.' },
-              { icon: 'ri-smartphone-line', title: 'Parent Communication Portal', desc: 'A dedicated SchoolCanvas Android app providing real-time updates on attendance, assignments and announcements — issued upon enrolment.', cta: { label: 'Get on Google Play', href: 'https://play.google.com/store/apps/details?id=schoolcanvas.triveni.publicschool.bangalore' } },
-              { icon: 'ri-book-open-line', title: 'School Diary System', desc: 'Every student carries a School Diary — a daily, two-way communication channel between teachers and parents, signed by both sides every day.' },
+              { icon: 'ri-award-line', title: 'ICSE Curriculum', desc: 'Recognised for delivering education in alignment with ICSE curriculum standards, fostering academic excellence and holistic development.' },
+              { icon: 'ri-building-2-line', title: 'Triveni Educational Trust', desc: 'Founded and governed by the Triveni Educational Trust (TET), which also operates the Triveni Group of Institutions.' },
+              { icon: 'ri-smartphone-line', title: 'Parent Communication Portal', desc: 'A dedicated platform that enables seamless communication between the school and parents, providing real-time updates on announcements, assignments and student attendance.', cta: { label: 'Get on Google Play', href: 'https://play.google.com/store/apps/details?id=schoolcanvas.triveni.publicschool.bangalore' } },
+              { icon: 'ri-book-open-line', title: 'School Diary System', desc: 'Each student maintains a School Diary that serves as a structured, daily channel of communication between teachers and parents, ensuring consistent updates, shared accountability and regular acknowledgement from both sides.' },
             ].map((card, i) => (
               <FadeIn key={card.title} delay={i * 0.1}>
-                <div className="bg-white rounded-md p-7 shadow-sm border border-border flex gap-4 items-start hover:shadow-md hover:border-accent transition-all duration-300 h-full">
-                  <div className="w-13 h-13 bg-accent/10 rounded-md flex items-center justify-center text-accent text-xl shrink-0">
+                <div className="bg-white rounded-md p-9 shadow-sm border border-border hover:-translate-y-1.5 hover:shadow-lg hover:border-accent transition-all duration-300 group h-full">
+                  <div className="w-15 h-15 bg-accent/10 rounded-md flex items-center justify-center text-accent text-2xl mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
                     <i className={card.icon} />
                   </div>
-                  <div>
-                    <h4 className="font-urbanist font-bold text-base text-[#1A1A2A] mb-1">{card.title}</h4>
-                    <p className="text-muted text-sm leading-[1.6]">{card.desc}</p>
-                    {card.cta && (
-                      <a
-                        href={card.cta.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 mt-3 text-accent font-urbanist font-semibold text-[13px] hover:underline"
-                      >
-                        <i className="ri-google-play-line" /> {card.cta.label} <i className="ri-arrow-right-line" />
-                      </a>
-                    )}
-                  </div>
+                  <h4 className="font-urbanist font-bold text-[18px] text-[#1A1A2A] mb-2.5">{card.title}</h4>
+                  <p className="text-muted text-sm leading-[1.7]">{card.desc}</p>
+                  {card.cta && (
+                    <a
+                      href={card.cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 mt-3 text-accent font-urbanist font-semibold text-[13px] hover:underline"
+                    >
+                      <i className="ri-google-play-line" /> {card.cta.label} <i className="ri-arrow-right-line" />
+                    </a>
+                  )}
                 </div>
               </FadeIn>
             ))}
