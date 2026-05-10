@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const steps = [
   { n: '1', title: 'Enquire', desc: 'Start your journey by filling out our enquiry form or connecting with our admissions office via call or WhatsApp. Share your child\'s name, age and preferred grade, and our team will guide you through the next steps.' },
-  { n: '2', title: 'Visit the School', desc: 'Schedule a campus visit on Hesaraghatta Main Road. Meet our team, see classrooms in action and get personalised answers to all your questions.' },
+  { n: '2', title: 'Visit the School', desc: 'Schedule a campus visit to our location on Hesaraghatta Main Road. Meet our team, experience our classrooms in action and gain clear, personalised answers to all your questions.' },
   { n: '3', title: 'Submit Documents', desc: 'Complete your application by submitting the required documents along with the form. Our admissions team will promptly review, verify and acknowledge your submission, ensuring a smooth and hassle-free process.' },
   { n: '4', title: 'Confirmation & Fee Payment', desc: 'Once your documents are successfully verified, secure your child\'s admission by completing the fee payment. With this final step, you officially become a part of the Triveni family — welcome aboard!' },
 ]

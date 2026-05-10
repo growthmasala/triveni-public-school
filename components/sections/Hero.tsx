@@ -15,7 +15,7 @@ const stats: StatItem[] = [
 ]
 
 const trust = [
-  { icon: 'ri-checkbox-circle-fill', text: '25+ Years of Excellence' },
+  { icon: 'ri-checkbox-circle-fill', text: 'Founded 2025–2026' },
   { icon: 'ri-checkbox-circle-fill', text: 'ICSE Curriculum' },
   { icon: 'ri-checkbox-circle-fill', text: 'NIE · TOI & The Hindu' },
   { icon: 'ri-checkbox-circle-fill', text: 'Grades I to VIII' },
